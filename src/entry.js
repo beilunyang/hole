@@ -28,11 +28,17 @@ router.map({
 	}
 });
 
+router.beforeEach(function(){
+	window.scrollTo(0, 0);
+});
+
 window.route = router;
 
 Vue.directive('fTime',function(value){
-	var time = value.split('T')[0].split('-').join('/');
-	this.el.innerText = time; 
+	if(typeof value === 'string'){
+		var time = value.split('T')[0].split('-').join('/');
+		this.el.innerText = time; 
+	}
 });
 
 var App = Vue.extend({});

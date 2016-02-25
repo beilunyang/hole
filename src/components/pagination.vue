@@ -1,7 +1,7 @@
 <template>
 	<ul class="pagination">
-		<li v-if="canPrev"><a href="#" @click.stop.prevent="forward"><i class="fa fa-angle-left"></i></a></li>
-		<li v-if="canNext"><a href="#" @click.stop.prevent="backward"><i class="fa fa-angle-right"></i></a></li>
+		<li v-show="canPrev"><a href="#" @click.stop.prevent="forward">&laquo;</a></li>
+		<li v-show="canNext"><a href="#" @click.stop.prevent="backward">&raquo;</a></li>
 	</ul>
 </template>
 
