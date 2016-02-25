@@ -1,0 +1,94 @@
+footer{
+	a:hover,a:active{
+		color:inherit;
+	}
+	position:relative;
+	color:darken(#FFF,10%);
+	margin-top:60px;
+	background-color:lighten(#000,20%);
+	padding:40px 0 7px;
+	a{
+		color:darken(#FFF,10%);
+		text-decoration:none;
+		i{
+			-webkit-border-radius:50%;
+			-moz-border-radius:50%;
+			border-radius:50%;
+			padding:10px;
+			opacity:.5;
+			&:hover{
+				opacity:1;
+			}
+		}
+	}
+	li{
+		list-style:none;
+		display:inline-block;
+		margin-right:10px;
+		margin-top:10px;
+	}
+	ul{
+		margin-top:5px;
+		display:inline-block;
+		color:darken(#FFF,10%);
+		font-size:18px;
+	}
+	.fa-qq{
+		background-color:#55cff8;
+	}
+	.fa-weibo{
+		background-color:#c83d20;
+	}
+	.fa-github{
+		background-color:#afb6ca;
+		padding:10px 11px;
+	}
+	.fa-rss{
+		background-color:#FFCC33;
+		padding:10px 12px;
+	}
+}
+
+.about-me{
+	padding-left:5%;
+	img{
+		position:relative;
+		top:-20px;
+		height:100px;
+		width:100px;
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;
+		border-radius:5px;
+		opacity:.5;
+
+	}
+	blockquote{
+		margin-top:0;
+		margin-bottom:0;
+		margin-left:5%;
+		border-left:4px solid lighten(#000,50%);
+		padding:10px 0 10px 10px;
+		display:inline-block;	
+	}
+}
+
+.copyright{
+	text-align:right;
+	font-size:14px;
+	padding-right:20px;
+	margin-top:30px;
+}
+
+.follow-me{
+	padding-left:5%;
+}
+
+	
+
+@media (max-width:768px){
+	.copyright{
+		text-align:left;
+		padding-left:5%;
+		margin-top:10px;
+	}
+}

@@ -1,0 +1,24 @@
+.pagination{
+	font-size:0;
+	width:66%;
+	margin:0 auto;
+	margin-top:20px;
+	padding:0;
+	li{
+		list-style:none;
+		display:inline-block;
+		width:50%;
+		text-align:left;
+		&:last-child{
+			text-align:right;
+		}
+	}
+	a{
+		font-size:35px;
+		color:#ccc;
+		&:hover{
+			color:#233;
+			text-decoration:none;
+		}
+	}
+}

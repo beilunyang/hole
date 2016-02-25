@@ -1,0 +1,97 @@
+.search-input{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	text-align:center;
+	opacity:0;
+	background-color:#FFF;
+	z-index:-100;
+	-webkit-transform:perspective(1000px) rotateY(180deg) scale(0.1);
+	-moz-transform:perspective(1000px) rotateY(180deg) scale(0.1);
+	transform:perspective(1000px) rotateY(180deg) scale(0.1);
+	-webkit-transition:all .5s;
+	-moz-transition:all .5s;
+	-ms-transition:all .5s;
+	-o-transition:all .5s;
+	transition:all .5s;
+	&.open{
+		z-index:500;
+		opacity:1;
+		-webkit-transform:perspective(1000px) rotateY(0) scale(1);
+		-moz-transform:perspective(1000px) rotateY(0) scale(1);
+		transform:perspective(1000px) rotateY(0) scale(1);
+	}
+}
+.s-hints{
+	margin-top:20px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	opacity:0;
+	-webkit-transition:all 1s;
+	-moz-transition:all 1s;
+	-ms-transition:all 1s;
+	-o-transition:all 1s;
+	transition:all 1s;
+}
+.s-close{
+	position:absolute;
+	right:5%;
+	top:5%;
+	-webkit-transform:rotate(50deg);
+	-moz-transform:rotate(50deg);
+	-ms-transform:rotate(50deg);
+	transform:rotate(50deg);
+	color:#CCC;
+	&:before{
+		content:'';
+		display:block;
+		border-top:1px solid;
+		width:40px;
+	}
+	&:after{
+		content:'';
+		display:block;
+		border-left:1px solid;
+		width:0;
+		height:40px;
+    	-webkit-transform:translate(20px,-20px) rotate(-10deg);
+    	-moz-transform:translate(20px,-20px) rotate(-10deg);
+    	-ms-transform:translate(20px,-20px) rotate(-10deg);
+    	transform:translate(20px,-20px) rotate(-10deg);
+	}
+	&:hover{
+		color:darken(#CCC,20%);
+	}
+}
+.input-group{
+	position:relative;
+	width:45%;
+	margin:0 auto;
+	i{
+		color:darken(#CCC,5%);
+		position:absolute;
+		left:10px;
+		top:87px;
+	}
+	input{
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		background-color:lighten(#CCC,10%);
+		margin-top:80px;
+		font-size:20px;
+		padding:10px 50px;
+		width:100%;
+		border:none;
+		-webkit-border-radius:8px;
+		-moz-border-radius:8px;
+		border-radius:8px;
+		&:focus{
+			outline:none;
+		}
+	}
+}
+

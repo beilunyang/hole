@@ -1,0 +1,24 @@
+{
+  "name": "sim",
+  "version": "1.0.0",
+  "description": "just a ghostblog theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "beilunyang",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "vue": "^1.0.16",
+    "vue-loader": "^8.1.4",
+    "vue-router": "^0.7.11",
+    "webpack": "^1.12.13"
+  }
+}
