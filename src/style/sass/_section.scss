@@ -1,6 +1,7 @@
 .main{
 	padding-top:170px;
 	margin-bottom:100px;
+	min-height:100%;
 }
 section{
 	width:70%;
@@ -15,7 +16,7 @@ section{
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 	h3{
-		font-size:1.5em;
+		font-size:1.5rem;
 		text-align:center;
 	}
 	a{
@@ -31,10 +32,11 @@ section{
 		margin-bottom:10px;
 		border-color:#ddd;
 	}
+
 }
 .pub-info{
 	text-align:center;
-	font-size:1.2em;
+	font-size:1.2rem;
 	margin-bottom:10px;
 }
 article{
@@ -43,9 +45,9 @@ article{
 	word-break:break-all;
 	img{
 		max-width:100%;
-		-webkit-border-radius:8px;
-		-moz-border-radius:8px;
-		border-radius:8px;
+		-webkit-border-radius:.5rem;
+		-moz-border-radius:.5rem;
+		border-radius:.5rem;
 		margin:8px 0;
 	}
 }
@@ -55,11 +57,24 @@ article{
 	font-size:1.2em;
 }
 .other-info{
+	padding:0;
 	padding-top:7px;
-	span{
-		margin-right:5px;
+	ul{
+		padding:0;
+		list-style:none;
 	}
-	&>span{
-		margin-right:10px;
+	li{
+		display:inline-block;
 	}
+	&>li{
+		padding:0 7px;
+	}
+	.fa-tags{
+		li{
+			padding:0 4px;
+		}
+		li:first-child{
+			padding-left:0;
+		}
+	} 
 }

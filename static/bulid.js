@@ -70,10 +70,10 @@
 		},
 		'/post/:id':{
 			name:'post',
-			component:__webpack_require__(/*! ./views/post.vue */ 25)
+			component:__webpack_require__(/*! ./views/post.vue */ 22)
 		},
 		'*':{
-			component:__webpack_require__(/*! ./views/404.vue */ 28)
+			component:__webpack_require__(/*! ./views/404.vue */ 25)
 		}
 	});
 	
@@ -12854,7 +12854,7 @@
 	
 	
 	// module
-	exports.push([module.id, "html {\n  height: 100%; }\n\nbody {\n  color: #333333;\n  height: 100%;\n  background-color: #f2f2f2;\n  font-size: 16px;\n  font-family: 'PT serif',\\5FAE\\8EDF\\6B63\\9ED1\\9AD4,\\5FAE\\8F6F\\96C5\\9ED1,\\534E\\6587\\7EC6\\9ED1,Microsoft Yahei,Hiragino Sans GB,sans-serif; }\n\nheader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: 20;\n  background-color: #FFF;\n  height: 80px;\n  -webkit-box-shadow: 0 0 5px 0 #333333;\n  -moz-box-shadow: 0 0 5px 0 #333333;\n  box-shadow: 0 0 5px 0 #333333; }\n\n.p-bar {\n  background-color: #000;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 3px; }\n\n.brand {\n  background-color: #000;\n  width: 200px;\n  height: 120px;\n  position: absolute;\n  left: 50%;\n  top: 0;\n  -webkit-transform: translateX(-50%);\n  -moz-transform: translateX(-50%);\n  -ms-transform: translateX(-50%);\n  -o-transform: translateX(-50%);\n  transform: translateX(-50%);\n  text-align: center;\n  padding: 20px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transition: all .3s;\n  -moz-transition: all .3s;\n  -ms-transition: all .3s;\n  -o-transition: all .3s;\n  transition: all .3s; }\n  .brand a {\n    color: #FFF;\n    text-decoration: none;\n    font-size: 24px;\n    margin-top: 20px; }\n  .brand p {\n    color: #e6e6e6;\n    font-size: 12px; }\n  .brand:before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border-left: 100px solid transparent;\n    border-right: 100px solid transparent;\n    border-top: 60px solid #000;\n    position: absolute;\n    left: 0;\n    top: 120px; }\n  .brand.scroll {\n    left: 140px;\n    height: 80px;\n    line-height: 35px;\n    width: auto; }\n    .brand.scroll p {\n      display: none; }\n    .brand.scroll a {\n      font-size: 18px; }\n    .brand.scroll:before {\n      display: none; }\n\n.search a {\n  text-decoration: none;\n  color: #333333;\n  position: absolute;\n  right: 20px;\n  top: 25px; }\n\n.more a {\n  text-decoration: none;\n  color: #333333;\n  position: absolute;\n  left: 20px;\n  top: 25px; }\n\n.navbar {\n  position: absolute;\n  right: 10%;\n  top: 0;\n  height: 100%; }\n  .navbar ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n    height: 100%; }\n  .navbar li {\n    display: inline-block;\n    height: 100%;\n    line-height: 80px;\n    padding: 0 10px; }\n  .navbar a {\n    text-decoration: none;\n    color: #666666; }\n    .navbar a:hover {\n      text-decoration: underline;\n      color: #333333; }\n\n.search-input {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  opacity: 0;\n  background-color: #FFF;\n  z-index: -100;\n  -webkit-transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  -moz-transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  -webkit-transition: all .5s;\n  -moz-transition: all .5s;\n  -ms-transition: all .5s;\n  -o-transition: all .5s;\n  transition: all .5s; }\n  .search-input.open {\n    z-index: 500;\n    opacity: 1;\n    -webkit-transform: perspective(1000px) rotateY(0) scale(1);\n    -moz-transform: perspective(1000px) rotateY(0) scale(1);\n    transform: perspective(1000px) rotateY(0) scale(1); }\n\n.s-hints {\n  margin-top: 20px;\n  -webkit-border-radius: 8px;\n  -moz-border-radius: 8px;\n  border-radius: 8px;\n  opacity: 0;\n  -webkit-transition: all 1s;\n  -moz-transition: all 1s;\n  -ms-transition: all 1s;\n  -o-transition: all 1s;\n  transition: all 1s; }\n\n.s-close {\n  position: absolute;\n  right: 5%;\n  top: 5%;\n  -webkit-transform: rotate(50deg);\n  -moz-transform: rotate(50deg);\n  -ms-transform: rotate(50deg);\n  transform: rotate(50deg);\n  color: #CCC; }\n  .s-close:before {\n    content: '';\n    display: block;\n    border-top: 1px solid;\n    width: 40px; }\n  .s-close:after {\n    content: '';\n    display: block;\n    border-left: 1px solid;\n    width: 0;\n    height: 40px;\n    -webkit-transform: translate(20px, -20px) rotate(-10deg);\n    -moz-transform: translate(20px, -20px) rotate(-10deg);\n    -ms-transform: translate(20px, -20px) rotate(-10deg);\n    transform: translate(20px, -20px) rotate(-10deg); }\n  .s-close:hover {\n    color: #999999; }\n\n.input-group {\n  position: relative;\n  width: 45%;\n  margin: 0 auto; }\n  .input-group i {\n    color: #bfbfbf;\n    position: absolute;\n    left: 10px;\n    top: 87px; }\n  .input-group input {\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n    background-color: #e6e6e6;\n    margin-top: 80px;\n    font-size: 20px;\n    padding: 10px 50px;\n    width: 100%;\n    border: none;\n    -webkit-border-radius: 8px;\n    -moz-border-radius: 8px;\n    border-radius: 8px; }\n    .input-group input:focus {\n      outline: none; }\n\n.main {\n  padding-top: 170px;\n  margin-bottom: 100px; }\n\nsection {\n  width: 70%;\n  margin: 0 auto;\n  margin-top: 50px;\n  padding: 15px 5%;\n  -webkit-box-shadow: 1px 1px 2px 0 #b3b3b3;\n  -moz-box-shadow: 1px 1px 2px 0 #b3b3b3;\n  box-shadow: 1px 1px 2px 0 #b3b3b3;\n  background-color: #FFF;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n  section h3 {\n    font-size: 1.5em;\n    text-align: center; }\n  section a {\n    color: inherit;\n    text-decoration: none; }\n    section a:hover {\n      color: #3333ff;\n      text-decoration: underline; }\n  section hr {\n    margin-top: 10px;\n    margin-bottom: 10px;\n    border-color: #ddd; }\n\n.pub-info {\n  text-align: center;\n  font-size: 1.2em;\n  margin-bottom: 10px; }\n\narticle {\n  padding-bottom: 12px;\n  word-wrap: break-word;\n  word-break: break-all; }\n  article img {\n    max-width: 100%;\n    -webkit-border-radius: 8px;\n    -moz-border-radius: 8px;\n    border-radius: 8px;\n    margin: 8px 0; }\n\n.read {\n  text-align: center;\n  margin-top: 10px;\n  font-size: 1.2em; }\n\n.other-info {\n  padding-top: 7px; }\n  .other-info span {\n    margin-right: 5px; }\n  .other-info > span {\n    margin-right: 10px; }\n\nfooter {\n  position: relative;\n  color: #e6e6e6;\n  margin-top: 60px;\n  background-color: #333333;\n  padding: 40px 0 7px; }\n  footer a:hover, footer a:active {\n    color: inherit; }\n  footer a {\n    color: #e6e6e6;\n    text-decoration: none; }\n    footer a i {\n      -webkit-border-radius: 50%;\n      -moz-border-radius: 50%;\n      border-radius: 50%;\n      padding: 10px;\n      opacity: .5; }\n      footer a i:hover {\n        opacity: 1; }\n  footer li {\n    list-style: none;\n    display: inline-block;\n    margin-right: 10px;\n    margin-top: 10px; }\n  footer ul {\n    margin-top: 5px;\n    display: inline-block;\n    color: #e6e6e6;\n    font-size: 18px; }\n  footer .fa-qq {\n    background-color: #55cff8; }\n  footer .fa-weibo {\n    background-color: #c83d20; }\n  footer .fa-github {\n    background-color: #afb6ca;\n    padding: 10px 11px; }\n  footer .fa-rss {\n    background-color: #FFCC33;\n    padding: 10px 12px; }\n\n.about-me {\n  padding-left: 5%; }\n  .about-me img {\n    position: relative;\n    top: -20px;\n    height: 100px;\n    width: 100px;\n    -webkit-border-radius: 5px;\n    -moz-border-radius: 5px;\n    border-radius: 5px;\n    opacity: .5; }\n  .about-me blockquote {\n    margin-top: 0;\n    margin-bottom: 0;\n    margin-left: 5%;\n    border-left: 4px solid gray;\n    padding: 10px 0 10px 10px;\n    display: inline-block; }\n\n.copyright {\n  text-align: right;\n  font-size: 14px;\n  padding-right: 20px;\n  margin-top: 30px; }\n\n.follow-me {\n  padding-left: 5%; }\n\n@media (max-width: 768px) {\n  .copyright {\n    text-align: left;\n    padding-left: 5%;\n    margin-top: 10px; } }\n\n.pagination {\n  font-size: 0;\n  position: relative;\n  width: 70%;\n  margin: 0 auto;\n  margin-top: 20px;\n  padding: 0; }\n  .pagination li {\n    position: absolute;\n    list-style: none;\n    display: inline-block;\n    top: 0; }\n    .pagination li:first-child {\n      left: 5%; }\n    .pagination li:last-child {\n      right: 5%; }\n  .pagination a {\n    font-size: 35px;\n    color: #c2c2c2; }\n    .pagination a:hover {\n      color: #333;\n      text-decoration: none; }\n\n.load {\n  margin-top: 50px;\n  text-align: center; }\n", ""]);
+	exports.push([module.id, "html {\n  height: 100%;\n  font-size: 16px; }\n\nbody {\n  color: #333333;\n  height: 100%;\n  background-color: #f2f2f2;\n  font-size: 16px;\n  font-family: 'PT serif',\\5FAE\\8EDF\\6B63\\9ED1\\9AD4,\\5FAE\\8F6F\\96C5\\9ED1,\\534E\\6587\\7EC6\\9ED1,Microsoft Yahei,Hiragino Sans GB,sans-serif; }\n\n#app {\n  height: 100%; }\n\nheader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: 20;\n  background-color: #FFF;\n  height: 80px;\n  -webkit-box-shadow: 0 0 5px 0 #333333;\n  -moz-box-shadow: 0 0 5px 0 #333333;\n  box-shadow: 0 0 5px 0 #333333; }\n\n.p-bar {\n  background-color: #000;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 3px; }\n\n.brand {\n  background-color: #000;\n  width: 200px;\n  height: 120px;\n  position: absolute;\n  left: 50%;\n  top: 0;\n  -webkit-transform: translateX(-50%);\n  -moz-transform: translateX(-50%);\n  -ms-transform: translateX(-50%);\n  -o-transform: translateX(-50%);\n  transform: translateX(-50%);\n  text-align: center;\n  padding: 20px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transition: all .3s;\n  -moz-transition: all .3s;\n  -ms-transition: all .3s;\n  -o-transition: all .3s;\n  transition: all .3s; }\n  .brand a {\n    color: #FFF;\n    text-decoration: none;\n    font-size: 24px;\n    margin-top: 20px; }\n  .brand p {\n    color: #e6e6e6;\n    font-size: .66rem; }\n  .brand:before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border-left: 100px solid transparent;\n    border-right: 100px solid transparent;\n    border-top: 60px solid #000;\n    position: absolute;\n    left: 0;\n    top: 120px; }\n  .brand.scroll {\n    left: 140px;\n    height: 80px;\n    line-height: 35px;\n    width: auto; }\n    .brand.scroll p {\n      display: none; }\n    .brand.scroll a {\n      font-size: 1.1rem; }\n    .brand.scroll:before {\n      display: none; }\n\n.search a {\n  text-decoration: none;\n  color: #333333;\n  position: absolute;\n  right: 20px;\n  top: 25px; }\n\n.more a {\n  text-decoration: none;\n  color: #333333;\n  position: absolute;\n  left: 20px;\n  top: 25px; }\n\n.navbar {\n  position: absolute;\n  right: 10%;\n  top: 0;\n  height: 100%; }\n  .navbar ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n    height: 100%; }\n  .navbar li {\n    display: inline-block;\n    height: 100%;\n    line-height: 80px;\n    padding: 0 10px; }\n  .navbar a {\n    text-decoration: none;\n    color: #666666; }\n    .navbar a:hover {\n      text-decoration: underline;\n      color: #333333; }\n\n.search-input {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  opacity: 0;\n  background-color: #FFF;\n  z-index: -100;\n  -webkit-transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  -moz-transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  -webkit-transition: all .5s;\n  -moz-transition: all .5s;\n  -ms-transition: all .5s;\n  -o-transition: all .5s;\n  transition: all .5s; }\n  .search-input.open {\n    z-index: 500;\n    opacity: 1;\n    -webkit-transform: perspective(1000px) rotateY(0) scale(1);\n    -moz-transform: perspective(1000px) rotateY(0) scale(1);\n    transform: perspective(1000px) rotateY(0) scale(1); }\n\n.s-hints {\n  margin-top: 20px;\n  -webkit-border-radius: 8px;\n  -moz-border-radius: 8px;\n  border-radius: 8px;\n  opacity: 0;\n  -webkit-transition: all 1s;\n  -moz-transition: all 1s;\n  -ms-transition: all 1s;\n  -o-transition: all 1s;\n  transition: all 1s; }\n\n.s-close {\n  position: absolute;\n  right: 5%;\n  top: 5%;\n  -webkit-transform: rotate(50deg);\n  -moz-transform: rotate(50deg);\n  -ms-transform: rotate(50deg);\n  transform: rotate(50deg);\n  color: #CCC; }\n  .s-close:before {\n    content: '';\n    display: block;\n    border-top: 1px solid;\n    width: 40px; }\n  .s-close:after {\n    content: '';\n    display: block;\n    border-left: 1px solid;\n    width: 0;\n    height: 40px;\n    -webkit-transform: translate(20px, -20px) rotate(-10deg);\n    -moz-transform: translate(20px, -20px) rotate(-10deg);\n    -ms-transform: translate(20px, -20px) rotate(-10deg);\n    transform: translate(20px, -20px) rotate(-10deg); }\n  .s-close:hover {\n    color: #999999; }\n\n.input-group {\n  position: relative;\n  width: 45%;\n  margin: 0 auto; }\n  .input-group i {\n    color: #bfbfbf;\n    position: absolute;\n    left: 10px;\n    top: 87px; }\n  .input-group input {\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n    background-color: #e6e6e6;\n    margin-top: 80px;\n    font-size: 20px;\n    padding: 10px 50px;\n    width: 100%;\n    border: none;\n    -webkit-border-radius: 8px;\n    -moz-border-radius: 8px;\n    border-radius: 8px; }\n    .input-group input:focus {\n      outline: none; }\n\n.main {\n  padding-top: 170px;\n  margin-bottom: 100px;\n  min-height: 100%; }\n\nsection {\n  width: 70%;\n  margin: 0 auto;\n  margin-top: 50px;\n  padding: 15px 5%;\n  -webkit-box-shadow: 1px 1px 2px 0 #b3b3b3;\n  -moz-box-shadow: 1px 1px 2px 0 #b3b3b3;\n  box-shadow: 1px 1px 2px 0 #b3b3b3;\n  background-color: #FFF;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n  section h3 {\n    font-size: 1.5rem;\n    text-align: center; }\n  section a {\n    color: inherit;\n    text-decoration: none; }\n    section a:hover {\n      color: #3333ff;\n      text-decoration: underline; }\n  section hr {\n    margin-top: 10px;\n    margin-bottom: 10px;\n    border-color: #ddd; }\n\n.pub-info {\n  text-align: center;\n  font-size: 1.2rem;\n  margin-bottom: 10px; }\n\narticle {\n  padding-bottom: 12px;\n  word-wrap: break-word;\n  word-break: break-all; }\n  article img {\n    max-width: 100%;\n    -webkit-border-radius: .5rem;\n    -moz-border-radius: .5rem;\n    border-radius: .5rem;\n    margin: 8px 0; }\n\n.read {\n  text-align: center;\n  margin-top: 10px;\n  font-size: 1.2em; }\n\n.other-info {\n  padding: 0;\n  padding-top: 7px; }\n  .other-info ul {\n    padding: 0;\n    list-style: none; }\n  .other-info li {\n    display: inline-block; }\n  .other-info > li {\n    padding: 0 7px; }\n  .other-info .fa-tags li {\n    padding: 0 4px; }\n  .other-info .fa-tags li:first-child {\n    padding-left: 0; }\n\nfooter {\n  position: relative;\n  color: #e6e6e6;\n  margin-top: 60px;\n  background-color: #333333;\n  padding: 40px 0 7px; }\n  footer a:hover, footer a:active {\n    color: inherit; }\n  footer a {\n    color: #e6e6e6;\n    text-decoration: none; }\n    footer a i {\n      -webkit-border-radius: 50%;\n      -moz-border-radius: 50%;\n      border-radius: 50%;\n      padding: 10px;\n      opacity: .5; }\n      footer a i:hover {\n        opacity: 1; }\n  footer li {\n    list-style: none;\n    display: inline-block;\n    margin-right: 10px;\n    margin-top: 10px; }\n  footer ul {\n    margin-top: 5px;\n    display: inline-block;\n    color: #e6e6e6;\n    font-size: 1.1rem; }\n  footer .fa-qq {\n    background-color: #55cff8; }\n  footer .fa-weibo {\n    background-color: #c83d20; }\n  footer .fa-github {\n    background-color: #afb6ca;\n    padding: 10px 11px; }\n  footer .fa-rss {\n    background-color: #FFCC33;\n    padding: 10px 12px; }\n\n.about-me {\n  padding-left: 5%; }\n  .about-me img {\n    position: relative;\n    top: -20px;\n    height: 100px;\n    width: 100px;\n    -webkit-border-radius: .4rem;\n    -moz-border-radius: .4rem;\n    border-radius: .4rem;\n    opacity: .5; }\n  .about-me blockquote {\n    margin-top: 0;\n    margin-bottom: 0;\n    margin-left: 5%;\n    border-left: 4px solid gray;\n    padding: 10px 0 10px 10px;\n    display: inline-block; }\n\n.copyright {\n  text-align: right;\n  font-size: 14px;\n  padding-right: 20px;\n  margin-top: 30px; }\n\n.follow-me {\n  padding-left: 5%; }\n\n@media (max-width: 768px) {\n  .copyright {\n    text-align: left;\n    padding-left: 5%;\n    margin-top: 10px; } }\n\n.pagination {\n  font-size: 0;\n  position: relative;\n  width: 70%;\n  margin: 0 auto;\n  margin-top: 20px;\n  padding: 0; }\n  .pagination li {\n    position: absolute;\n    list-style: none;\n    display: inline-block;\n    top: 0; }\n    .pagination li:first-child {\n      left: 5%; }\n    .pagination li:last-child {\n      right: 5%; }\n  .pagination a {\n    font-size: 35px;\n    color: #c2c2c2; }\n    .pagination a:hover {\n      color: #333;\n      text-decoration: none; }\n\n.load {\n  margin-top: 100px;\n  text-align: center; }\n\n@media (min-width: 768px) {\n  .navbar {\n    display: none;\n    opacity: 0; } }\n\n@media (max-width: 768px) {\n  .brand {\n    display: none; }\n  html {\n    font-size: 14px; } }\n", ""]);
 	
 	// exports
 
@@ -12918,6 +12918,7 @@
 		    h = $('html'),
 		    search_input = $('.search-input'),
 		    brand = $('.brand'),
+		    navbar = $('.navbar'),
 		    s_hints = $('.s-hints');
 		/*$('.more').on('click',function(){
 			if(isleft === true){
@@ -12941,6 +12942,8 @@
 		$(window).on('scroll',function(){
 			if($(this).scrollTop()>80){
 				brand.addClass('scroll');
+				navbar.css('display','block')
+					  .animate({'opacity':1},2000);
 				$(this).off('scroll');
 			}
 		});
@@ -12960,7 +12963,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./index.vue */ 24)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./index.vue */ 21)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12997,7 +13000,8 @@
 		},
 		components: {
 			'mySection': __webpack_require__(/*! ../components/section.vue */ 15),
-			'myPagination': __webpack_require__(/*! ../components/pagination.vue */ 18)
+			'myPagination': __webpack_require__(/*! ../components/pagination.vue */ 18),
+			'loading': __webpack_require__(/*! ../components/loading.vue */ 28)
 		},
 		route: {
 			data: function data(transition) {
@@ -13063,7 +13067,7 @@
   \*************************************************************************************************************/
 /***/ function(module, exports) {
 
-	module.exports = "\n<section>\n\t<h3>\n\t\t<a v-link=\"{name:'post',params:{id:post.id}}\">{{post.title}}</a>\n\t</h3>\n\t<div class=\"pub-info\" v-f-time=\"post.created_at\"></div>\n\t<template v-if=\"identity\">\n\t\t<article>\n\t\t\t{{post.meta_description}}\n\t\t\t<img :src=\"post.image\" alt=\"pic\" v-if=\"post.image\">\n\t\t\t<div class=\"read\"><a v-link=\"{name:'post',params:{id:post.id}}\">阅读全文</a></div>\n\t\t</article>\n\t\t<hr>\n\t\t<div class=\"other-info\">\n\t\t\t<!-- <span class=\"fa fa-user\">&nbsp;{{post.created_by}}</span> -->\n\t\t\t<span class=\"fa fa-comment\">&nbsp;<a href=\"#\">12</a></span>\n\t\t\t<span class=\"fa fa-tag\">\n\t\t\t\t<span> javascript</span>\n\t\t\t\t<span> python</span>\n\t\t\t</span>\n\t\t</div>\n\t</template>\n\t<template v-else>\n\t\t<article class=\"markdown-body\">\n\t\t\t{{{post.html}}}\n\t\t</article>\n\t</template>\n</section>\n";
+	module.exports = "\n<section>\n\t<h3>\n\t\t<a v-link=\"{name:'post',params:{id:post.id}}\">{{post.title}}</a>\n\t</h3>\n\t<div class=\"pub-info\" v-f-time=\"post.created_at\"></div>\n\t<template v-if=\"identity\">\n\t\t<article>\n\t\t\t{{post.meta_description}}\n\t\t\t<img :src=\"post.image\" alt=\"pic\" v-if=\"post.image\">\n\t\t\t<div class=\"read\"><a v-link=\"{name:'post',params:{id:post.id}}\">阅读全文</a></div>\n\t\t</article>\n\t\t<hr>\n\t\t<ul class=\"other-info\">\n\t\t\t<li class=\"fa fa-comment\">&nbsp;<a href=\"#\">12</a></li>\n\t\t\t<li>\n\t\t\t\t<ul class=\"fa fa-tags\">\n\t\t\t\t\t<li><a href=\"#\">javascript</a></li>\n\t\t\t\t\t<li><a href=\"#\">python</a></li>\t\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t</ul>\n\t</template>\n\t<template v-else>\n\t\t<article class=\"markdown-body\">\n\t\t\t{{{post.html}}}\n\t\t</article>\n\t</template>\n</section>\n";
 
 /***/ },
 /* 18 */
@@ -13158,31 +13162,28 @@
 	module.exports = "\n<ul class=\"pagination\">\n\t<li v-show=\"canPrev\"><a href=\"#\" @click.stop.prevent=\"forward\">&laquo;</a></li>\n\t<li v-show=\"canNext\"><a href=\"#\" @click.stop.prevent=\"backward\">&raquo;</a></li>\n</ul>\n";
 
 /***/ },
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */
+/* 21 */
 /*!******************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/index.vue ***!
   \******************************************************************************************************/
 /***/ function(module, exports) {
 
-	module.exports = "\n<my-section :post='post' :identity='true' v-for=\"post in posts\"></my-section>\n<my-pagination :pid='pid'></my-pagination>\n";
+	module.exports = "\n<loading v-if=\"showload\"></loading>\n<my-section :post='post' :identity='true' v-for=\"post in posts\"></my-section>\n<my-pagination :pid='pid'></my-pagination>\n";
 
 /***/ },
-/* 25 */
+/* 22 */
 /*!****************************!*\
   !*** ./src/views/post.vue ***!
   \****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./post.vue */ 26)
+	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./post.vue */ 23)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\post.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./post.vue */ 27)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./post.vue */ 24)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13201,7 +13202,7 @@
 	})()}
 
 /***/ },
-/* 26 */
+/* 23 */
 /*!************************************************************************************************************************************************************!*\
   !*** ./~/babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./~/vue-loader/lib/selector.js?type=script&index=0!./src/views/post.vue ***!
   \************************************************************************************************************************************************************/
@@ -13233,7 +13234,7 @@
 	};
 
 /***/ },
-/* 27 */
+/* 24 */
 /*!*****************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/post.vue ***!
   \*****************************************************************************************************/
@@ -13242,19 +13243,19 @@
 	module.exports = "\n<my-section :post='post_content'></my-section>\t\n";
 
 /***/ },
-/* 28 */
+/* 25 */
 /*!***************************!*\
   !*** ./src/views/404.vue ***!
   \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./404.vue */ 29)
+	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./404.vue */ 26)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\404.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./404.vue */ 30)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./404.vue */ 27)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13273,7 +13274,7 @@
 	})()}
 
 /***/ },
-/* 29 */
+/* 26 */
 /*!***********************************************************************************************************************************************************!*\
   !*** ./~/babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./~/vue-loader/lib/selector.js?type=script&index=0!./src/views/404.vue ***!
   \***********************************************************************************************************************************************************/
@@ -13284,13 +13285,57 @@
 	module.exports = {};
 
 /***/ },
-/* 30 */
+/* 27 */
 /*!****************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/404.vue ***!
   \****************************************************************************************************/
 /***/ function(module, exports) {
 
 	module.exports = "\n\n";
+
+/***/ },
+/* 28 */
+/*!************************************!*\
+  !*** ./src/components/loading.vue ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./loading.vue */ 29)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "D:\\ghost_test\\content\\themes\\hole\\src\\components\\loading.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 29 */
+/*!*************************************************************************************************************!*\
+  !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/loading.vue ***!
+  \*************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "\n<div class=\"load\">\n\t<img src=\"" + __webpack_require__(/*! ../load.gif */ 30) + "\" alt=\"load\" width=\"100\" height=\"100\">\n</div>\n";
+
+/***/ },
+/* 30 */
+/*!**********************!*\
+  !*** ./src/load.gif ***!
+  \**********************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "2dc52a5cdfef7d0d9aea515cf900b871.gif";
 
 /***/ }
 /******/ ]);

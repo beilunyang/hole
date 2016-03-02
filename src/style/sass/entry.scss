@@ -1,5 +1,6 @@
 html{
 	height:100%;
+	font-size:16px;
 }
 body{
 	color:lighten(#000,20%);
@@ -7,6 +8,9 @@ body{
 	background-color:#f2f2f2;
 	font-size:16px;
 	font-family:'PT serif',\5FAE\8EDF\6B63\9ED1\9AD4,\5FAE\8F6F\96C5\9ED1,\534E\6587\7EC6\9ED1,Microsoft Yahei,Hiragino Sans GB,sans-serif;
+}
+#app{
+	height:100%;
 }
 @import 'header';
 @import 'navbar';
@@ -16,3 +20,4 @@ body{
 @import 'footer';
 @import 'pagination';
 @import 'loading';
+@import 'media';

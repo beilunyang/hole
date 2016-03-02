@@ -11,14 +11,15 @@
 				<div class="read"><a v-link="{name:'post',params:{id:post.id}}">阅读全文</a></div>
 			</article>
 			<hr>
-			<div class="other-info">
-				<!-- <span class="fa fa-user">&nbsp;{{post.created_by}}</span> -->
-				<span class="fa fa-comment">&nbsp;<a href="#">12</a></span>
-				<span class="fa fa-tag">
-					<span> javascript</span>
-					<span> python</span>
-				</span>
-			</div>
+			<ul class="other-info">
+				<li class="fa fa-comment">&nbsp;<a href="#">12</a></li>
+				<li>
+					<ul class="fa fa-tags">
+						<li><a href="#">javascript</a></li>
+						<li><a href="#">python</a></li>	
+					</ul>
+				</li>
+			</ul>
 		</template>
 		<template v-else>
 			<article class="markdown-body">

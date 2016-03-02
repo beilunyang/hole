@@ -1,0 +1,15 @@
+@media(min-width:768px){
+	.navbar{
+		display:none;
+		opacity:0;
+	}
+}
+
+@media(max-width:768px){
+	.brand{
+		display:none;
+	}
+	html{
+		font-size:14px;
+	}
+}

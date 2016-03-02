@@ -4,6 +4,7 @@ $(function(){
 	    h = $('html'),
 	    search_input = $('.search-input'),
 	    brand = $('.brand'),
+	    navbar = $('.navbar'),
 	    s_hints = $('.s-hints');
 	/*$('.more').on('click',function(){
 		if(isleft === true){
@@ -27,6 +28,8 @@ $(function(){
 	$(window).on('scroll',function(){
 		if($(this).scrollTop()>80){
 			brand.addClass('scroll');
+			navbar.css('display','block')
+				  .animate({'opacity':1},2000);
 			$(this).off('scroll');
 		}
 	});

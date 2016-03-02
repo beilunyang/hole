@@ -44,11 +44,11 @@ header{
 		color:#FFF;
 		text-decoration:none;
 		font-size:24px;
-		margin-top: 20px;
+		margin-top:20px;
 	}
 	p{
 		color:darken(#FFF,10%);
-		font-size:12px;
+		font-size:.66rem;
 	}
 	 &:before{
 		content:'';
@@ -71,7 +71,7 @@ header{
 			display:none;
 		}
 		a{
-			font-size:18px;
+			font-size:1.1rem;
 		}
 		&:before{
 			display:none;
@@ -81,9 +81,9 @@ header{
 
 .search{
 	a{
-		text-decoration: none;
+		text-decoration:none;
 		color:lighten(#000,20%);
-		position: absolute;
+		position:absolute;
 		right:20px;
 		top:25px;
 	}

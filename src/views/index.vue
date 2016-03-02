@@ -1,4 +1,5 @@
 <template>
+	<loading v-if="showload"></loading>
 	<my-section :post='post' :identity='true' v-for="post in posts"></my-section>
 	<my-pagination :pid='pid'></my-pagination>
 </template>
@@ -14,8 +15,8 @@
 		},
 		components:{
 			'mySection':require('../components/section.vue'),
-			'myPagination':require('../components/pagination.vue')
-			/*'loading':require('../components/loading.vue')*/
+			'myPagination':require('../components/pagination.vue'),
+			'loading':require('../components/loading.vue')
 		},
 		route:{
 			data:function(transition){
