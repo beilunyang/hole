@@ -70,10 +70,10 @@
 		},
 		'/post/:id':{
 			name:'post',
-			component:__webpack_require__(/*! ./views/post.vue */ 22)
+			component:__webpack_require__(/*! ./views/post.vue */ 25)
 		},
 		'*':{
-			component:__webpack_require__(/*! ./views/404.vue */ 25)
+			component:__webpack_require__(/*! ./views/404.vue */ 28)
 		}
 	});
 	
@@ -12963,7 +12963,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./index.vue */ 21)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./index.vue */ 24)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13001,7 +13001,7 @@
 		components: {
 			'mySection': __webpack_require__(/*! ../components/section.vue */ 15),
 			'myPagination': __webpack_require__(/*! ../components/pagination.vue */ 18),
-			'loading': __webpack_require__(/*! ../components/loading.vue */ 28)
+			'loading': __webpack_require__(/*! ../components/loading.vue */ 21)
 		},
 		route: {
 			data: function data(transition) {
@@ -13163,6 +13163,50 @@
 
 /***/ },
 /* 21 */
+/*!************************************!*\
+  !*** ./src/components/loading.vue ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./loading.vue */ 22)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "D:\\ghost_test\\content\\themes\\hole\\src\\components\\loading.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 22 */
+/*!*************************************************************************************************************!*\
+  !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/loading.vue ***!
+  \*************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "\n<div class=\"load\">\n\t<img src=\"" + __webpack_require__(/*! ../load.gif */ 23) + "\" alt=\"load\" width=\"60\" height=\"64\">\n</div>\n";
+
+/***/ },
+/* 23 */
+/*!**********************!*\
+  !*** ./src/load.gif ***!
+  \**********************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "2dc52a5cdfef7d0d9aea515cf900b871.gif";
+
+/***/ },
+/* 24 */
 /*!******************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/index.vue ***!
   \******************************************************************************************************/
@@ -13171,19 +13215,19 @@
 	module.exports = "\n<loading v-if=\"showload\"></loading>\n<my-section :post='post' :identity='true' v-for=\"post in posts\"></my-section>\n<my-pagination :pid='pid'></my-pagination>\n";
 
 /***/ },
-/* 22 */
+/* 25 */
 /*!****************************!*\
   !*** ./src/views/post.vue ***!
   \****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./post.vue */ 23)
+	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./post.vue */ 26)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\post.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./post.vue */ 24)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./post.vue */ 27)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13202,7 +13246,7 @@
 	})()}
 
 /***/ },
-/* 23 */
+/* 26 */
 /*!************************************************************************************************************************************************************!*\
   !*** ./~/babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./~/vue-loader/lib/selector.js?type=script&index=0!./src/views/post.vue ***!
   \************************************************************************************************************************************************************/
@@ -13234,7 +13278,7 @@
 	};
 
 /***/ },
-/* 24 */
+/* 27 */
 /*!*****************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/post.vue ***!
   \*****************************************************************************************************/
@@ -13243,19 +13287,19 @@
 	module.exports = "\n<my-section :post='post_content'></my-section>\t\n";
 
 /***/ },
-/* 25 */
+/* 28 */
 /*!***************************!*\
   !*** ./src/views/404.vue ***!
   \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./404.vue */ 26)
+	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./404.vue */ 29)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\404.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./404.vue */ 27)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./404.vue */ 30)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13274,7 +13318,7 @@
 	})()}
 
 /***/ },
-/* 26 */
+/* 29 */
 /*!***********************************************************************************************************************************************************!*\
   !*** ./~/babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./~/vue-loader/lib/selector.js?type=script&index=0!./src/views/404.vue ***!
   \***********************************************************************************************************************************************************/
@@ -13285,57 +13329,13 @@
 	module.exports = {};
 
 /***/ },
-/* 27 */
+/* 30 */
 /*!****************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/404.vue ***!
   \****************************************************************************************************/
 /***/ function(module, exports) {
 
 	module.exports = "\n\n";
-
-/***/ },
-/* 28 */
-/*!************************************!*\
-  !*** ./src/components/loading.vue ***!
-  \************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./loading.vue */ 29)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "D:\\ghost_test\\content\\themes\\hole\\src\\components\\loading.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 29 */
-/*!*************************************************************************************************************!*\
-  !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/loading.vue ***!
-  \*************************************************************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "\n<div class=\"load\">\n\t<img src=\"" + __webpack_require__(/*! ../load.gif */ 30) + "\" alt=\"load\" width=\"100\" height=\"100\">\n</div>\n";
-
-/***/ },
-/* 30 */
-/*!**********************!*\
-  !*** ./src/load.gif ***!
-  \**********************/
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "2dc52a5cdfef7d0d9aea515cf900b871.gif";
 
 /***/ }
 /******/ ]);
