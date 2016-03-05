@@ -1,7 +1,9 @@
 .navbar{
-	position:absolute;
+	/* position:absolute;
 	right:10%;
-	top:0;
+	top:0; */
+	float:right;
+	padding-right:80px;
 	height:100%;
 	ul{
 		list-style:none;
@@ -11,8 +13,6 @@
 	}
 	li{
 		display:inline-block;
-		height:100%;
-		line-height:80px;
 		padding:0 10px;
 	}
 	a{
