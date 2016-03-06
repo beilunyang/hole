@@ -40,6 +40,7 @@ section{
 	margin-bottom:10px;
 }
 article{
+	line-height:1.6;
 	padding-bottom:12px;
 	word-wrap:break-word;
 	word-break:break-all;
@@ -78,3 +79,30 @@ article{
 		}
 	} 
 }
+
+.bl-transition{
+	-webkit-transition:all .3s;
+	-moz-transition:all .3s;
+	-ms-transition:all .3s;
+	-o-transition:all .3s;
+	transition:all .3s;
+	position:relative;
+	left:0;
+	top:0;
+	opacity:1;
+}
+
+/** 
+ * enter:组件进入时的状态
+ * leave:组件离开时的状态
+ * 如果不设置leave,组件将保留
+ * 如:翻页时,仍然存在前一页的内容
+ */
+.bl-enter,
+.bl-leave{
+	position:relative;
+	left:0;
+	top:-200px;
+	opacity:0;
+}
+

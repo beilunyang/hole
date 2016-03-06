@@ -1,6 +1,6 @@
 <template>
 	<loading v-if="showload"></loading>
-	<my-section :post='post' :identity='true' v-for="post in posts"></my-section>
+	<my-section :post='post' :identity='true' v-for="post in posts" transition="bl"></my-section>
 	<my-pagination :pid='pid'></my-pagination>
 </template>
 
