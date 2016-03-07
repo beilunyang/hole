@@ -34,10 +34,32 @@ router.beforeEach(function(){
 
 window.route = router;
 
-Vue.directive('fTime',function(value){
+Vue.directive('f-time',function(value){
 	if(typeof value === 'string'){
 		var time = value.split('T')[0].split('-').join('/');
 		this.el.innerText = time; 
+	}
+});
+
+Vue.directive('show-comment',{
+	bind:function(){
+		(function() { 
+		var d = document, s = d.createElement('script');
+		s.id = 'disqus';
+		s.src = '//bitibiti.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+	},
+	update:function(newValue,oldValue){
+		var disqus_config = function () {
+		this.page.url = newValue.url;
+		this.page.identifier = newValue.id;
+		} 
+	},
+	unbind:function(){
+		var dis = document.getElementById('disqus');
+		dis.parentNode.removeChild(dis);
 	}
 });
 
