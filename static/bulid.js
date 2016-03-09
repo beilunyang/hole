@@ -70,10 +70,10 @@
 		},
 		'/post/:id':{
 			name:'post',
-			component:__webpack_require__(/*! ./views/post.vue */ 25)
+			component:__webpack_require__(/*! ./views/post.vue */ 28)
 		},
 		'*':{
-			component:__webpack_require__(/*! ./views/404.vue */ 28)
+			component:__webpack_require__(/*! ./views/404.vue */ 31)
 		}
 	});
 	
@@ -92,13 +92,12 @@
 	
 	Vue.directive('show-comment',{
 		bind:function(){
-			(function() { 
-			var d = document, s = d.createElement('script');
+			var d = document,
+				s = d.createElement('script');
 			s.id = 'disqus';
 			s.src = '//bitibiti.disqus.com/embed.js';
 			s.setAttribute('data-timestamp', +new Date());
 			(d.head || d.body).appendChild(s);
-			})();
 		},
 		update:function(newValue,oldValue){
 			var disqus_config = function () {
@@ -110,6 +109,45 @@
 			var dis = document.getElementById('disqus');
 			dis.parentNode.removeChild(dis);
 		}
+	});
+	
+	Vue.directive('show-count',{
+		/*bind:function(){
+				var d = document,
+					dc = d.getElementById('disqus-count');
+				if(!dc){
+					var s = d.createElement('script');
+					s.id = 'disqus-count';
+					s.src = '//bitibiti.disqus.com/count.js';
+					s.async = 'async';
+					(d.head || d.body).appendChild(s);
+				}
+		},*/
+		update:function(newValue,oldValue){
+			var c = document.getElementById('disqus-count');
+			if(c){
+				c.parentNode.removeChild(c);
+			}
+			var d = document,
+				dc = d.getElementById('disqus-count');
+			if(!dc){
+				var s = d.createElement('script');
+				s.id = 'disqus-count';
+				s.src = '//bitibiti.disqus.com/count.js';
+				s.async = 'async';
+				(d.head || d.body).appendChild(s);
+			}
+	
+			this.el.href = '/' + newValue.slug + '#disqus_thread';
+			this.el.dataset.disqusIdentifier =  newValue.id;
+			
+		}/*,
+		unbind:function(){
+			var c = document.getElementById('disqus-count');
+			if(c){
+				c.parentNode.removeChild(c);
+			}
+		}*/
 	});
 	
 	var App = Vue.extend({});
@@ -12876,7 +12914,7 @@
 	
 	
 	// module
-	exports.push([module.id, "@charset \"UTF-8\";\nhtml {\n  height: 100%;\n  font-size: 16px; }\n\nbody {\n  color: #333333;\n  height: 100%;\n  background-color: #f2f2f2;\n  font-size: 16px;\n  font-family: 'PT serif',\\5FAE\\8EDF\\6B63\\9ED1\\9AD4,\\5FAE\\8F6F\\96C5\\9ED1,\\534E\\6587\\7EC6\\9ED1,Microsoft Yahei,Hiragino Sans GB,sans-serif; }\n\n#app {\n  height: 100%; }\n\nheader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: 20;\n  background-color: #FFF;\n  -webkit-box-shadow: 0 0 5px 0 #333333;\n  -moz-box-shadow: 0 0 5px 0 #333333;\n  box-shadow: 0 0 5px 0 #333333; }\n\n.p-bar {\n  background-color: #000;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 3px; }\n\n.brand {\n  background-color: #000;\n  width: 200px;\n  height: 120px;\n  position: absolute;\n  left: 50%;\n  top: 0;\n  -webkit-transform: translateX(-50%);\n  -moz-transform: translateX(-50%);\n  -ms-transform: translateX(-50%);\n  -o-transform: translateX(-50%);\n  transform: translateX(-50%);\n  text-align: center;\n  padding: 20px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transition: all .3s;\n  -moz-transition: all .3s;\n  -ms-transition: all .3s;\n  -o-transition: all .3s;\n  transition: all .3s; }\n  .brand a {\n    color: #FFF;\n    text-decoration: none;\n    font-size: 24px;\n    margin-top: 20px; }\n  .brand p {\n    color: #e6e6e6;\n    font-size: .66rem; }\n  .brand:before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border-left: 100px solid transparent;\n    border-right: 100px solid transparent;\n    border-top: 60px solid #000;\n    position: absolute;\n    left: 0;\n    top: 120px; }\n  .brand.scroll {\n    left: 140px;\n    height: 80px;\n    line-height: 35px;\n    width: auto; }\n    .brand.scroll p {\n      display: none; }\n    .brand.scroll a {\n      font-size: 1.1rem; }\n    .brand.scroll:before {\n      display: none; }\n\n.search a {\n  text-decoration: none;\n  color: #333333;\n  position: absolute;\n  right: 20px;\n  top: 25px; }\n\n.more a {\n  text-decoration: none;\n  color: #333333;\n  position: absolute;\n  left: 20px;\n  top: 25px; }\n\n.navbar {\n  /* position:absolute;\r\n\tright:10%;\r\n\ttop:0; */\n  float: right;\n  padding-right: 80px;\n  height: 100%; }\n  .navbar ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n    height: 100%; }\n  .navbar li {\n    display: inline-block;\n    padding: 0 10px; }\n  .navbar a {\n    text-decoration: none;\n    color: #666666; }\n    .navbar a:hover {\n      text-decoration: underline;\n      color: #333333; }\n\n.search-input {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  opacity: 0;\n  background-color: #FFF;\n  z-index: -100;\n  -webkit-transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  -moz-transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  -webkit-transition: all .5s;\n  -moz-transition: all .5s;\n  -ms-transition: all .5s;\n  -o-transition: all .5s;\n  transition: all .5s; }\n  .search-input.open {\n    z-index: 500;\n    opacity: 1;\n    -webkit-transform: perspective(1000px) rotateY(0) scale(1);\n    -moz-transform: perspective(1000px) rotateY(0) scale(1);\n    transform: perspective(1000px) rotateY(0) scale(1); }\n\n.s-hints {\n  margin-top: 20px;\n  -webkit-border-radius: 8px;\n  -moz-border-radius: 8px;\n  border-radius: 8px;\n  opacity: 0;\n  -webkit-transition: all 1s;\n  -moz-transition: all 1s;\n  -ms-transition: all 1s;\n  -o-transition: all 1s;\n  transition: all 1s; }\n\n.s-close {\n  position: absolute;\n  right: 5%;\n  top: 5%;\n  -webkit-transform: rotate(50deg);\n  -moz-transform: rotate(50deg);\n  -ms-transform: rotate(50deg);\n  transform: rotate(50deg);\n  color: #CCC; }\n  .s-close:before {\n    content: '';\n    display: block;\n    border-top: 1px solid;\n    width: 40px; }\n  .s-close:after {\n    content: '';\n    display: block;\n    border-left: 1px solid;\n    width: 0;\n    height: 40px;\n    -webkit-transform: translate(20px, -20px) rotate(-10deg);\n    -moz-transform: translate(20px, -20px) rotate(-10deg);\n    -ms-transform: translate(20px, -20px) rotate(-10deg);\n    transform: translate(20px, -20px) rotate(-10deg); }\n  .s-close:hover {\n    color: #999999; }\n\n.input-group {\n  position: relative;\n  width: 45%;\n  margin: 0 auto; }\n  .input-group i {\n    color: #bfbfbf;\n    position: absolute;\n    left: 10px;\n    top: 87px; }\n  .input-group input {\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n    background-color: #e6e6e6;\n    margin-top: 80px;\n    font-size: 20px;\n    padding: 10px 50px;\n    width: 100%;\n    border: none;\n    -webkit-border-radius: 8px;\n    -moz-border-radius: 8px;\n    border-radius: 8px; }\n    .input-group input:focus {\n      outline: none; }\n\n.main {\n  padding-top: 170px;\n  margin-bottom: 100px;\n  min-height: 100%; }\n\nsection, .comment {\n  width: 70%;\n  margin: 0 auto;\n  margin-top: 50px;\n  padding: 15px 5%;\n  -webkit-box-shadow: 1px 1px 2px 0 #b3b3b3;\n  -moz-box-shadow: 1px 1px 2px 0 #b3b3b3;\n  box-shadow: 1px 1px 2px 0 #b3b3b3;\n  background-color: #FFF;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n  section h3, .comment h3 {\n    font-size: 1.5rem;\n    text-align: center; }\n  section a, .comment a {\n    color: inherit;\n    text-decoration: none; }\n    section a:hover, .comment a:hover {\n      color: #3333ff;\n      text-decoration: underline; }\n  section hr, .comment hr {\n    margin-top: 10px;\n    margin-bottom: 10px;\n    border-color: #ddd; }\n\n.pub-info {\n  text-align: center;\n  font-size: 1.2rem;\n  margin-bottom: 10px; }\n\narticle {\n  line-height: 1.6;\n  padding-bottom: 12px;\n  word-wrap: break-word;\n  word-break: break-all; }\n  article img {\n    max-width: 100%;\n    -webkit-border-radius: .5rem;\n    -moz-border-radius: .5rem;\n    border-radius: .5rem;\n    margin: 8px 0; }\n\n.read {\n  text-align: center;\n  margin-top: 10px;\n  font-size: 1.2em; }\n\n.other-info {\n  padding: 0;\n  padding-top: 7px; }\n  .other-info ul {\n    padding: 0;\n    list-style: none; }\n  .other-info li {\n    display: inline-block; }\n  .other-info > li {\n    padding: 0 7px; }\n  .other-info .fa-tags li {\n    padding: 0 4px; }\n  .other-info .fa-tags li:first-child {\n    padding-left: 0; }\n\n.bl-transition {\n  -webkit-transition: all .6s ease-out;\n  -moz-transition: all .6s ease-out;\n  -ms-transition: all .6s ease-out;\n  -o-transition: all .6s ease-out;\n  transition: all .6s ease-out;\n  position: relative;\n  left: 0;\n  top: 0;\n  opacity: 1; }\n\n/** \r\n * enter:组件进入时的状态\r\n * leave:组件离开时的状态\r\n * 如果不设置leave,组件将保留\r\n * 如:翻页时,仍然存在前一页的内容\r\n */\n.bl-enter,\n.bl-leave {\n  position: relative;\n  left: 0;\n  top: -200px;\n  opacity: 0; }\n\nfooter {\n  position: relative;\n  color: #e6e6e6;\n  margin-top: 60px;\n  background-color: #333333;\n  padding: 40px 0 7px; }\n  footer a:hover, footer a:active {\n    color: inherit; }\n  footer a {\n    color: #e6e6e6;\n    text-decoration: none; }\n    footer a i {\n      -webkit-border-radius: 50%;\n      -moz-border-radius: 50%;\n      border-radius: 50%;\n      padding: 10px;\n      opacity: .5; }\n      footer a i:hover {\n        opacity: 1; }\n  footer li {\n    list-style: none;\n    display: inline-block;\n    margin-right: 10px;\n    margin-top: 10px; }\n  footer ul {\n    margin-top: 5px;\n    display: inline-block;\n    color: #e6e6e6;\n    font-size: 1.1rem; }\n  footer .fa-qq {\n    background-color: #55cff8; }\n  footer .fa-weibo {\n    background-color: #c83d20; }\n  footer .fa-github {\n    background-color: #afb6ca;\n    padding: 10px 11px; }\n  footer .fa-rss {\n    background-color: #FFCC33;\n    padding: 10px 12px; }\n\n.about-me {\n  padding-left: 5%; }\n  .about-me img {\n    position: relative;\n    top: -20px;\n    height: 100px;\n    width: 100px;\n    -webkit-border-radius: .4rem;\n    -moz-border-radius: .4rem;\n    border-radius: .4rem;\n    opacity: .5; }\n  .about-me blockquote {\n    margin-top: 0;\n    margin-bottom: 0;\n    margin-left: 5%;\n    border-left: 4px solid gray;\n    padding: 10px 0 10px 10px;\n    display: inline-block; }\n\n.copyright {\n  text-align: right;\n  font-size: 14px;\n  padding-right: 20px;\n  margin-top: 30px; }\n\n.follow-me {\n  padding-left: 5%; }\n\n@media (max-width: 768px) {\n  .copyright {\n    text-align: left;\n    padding-left: 5%;\n    margin-top: 10px; } }\n\n.pagination {\n  font-size: 0;\n  position: relative;\n  width: 70%;\n  margin: 0 auto;\n  margin-top: 20px;\n  padding: 0; }\n  .pagination li {\n    position: absolute;\n    list-style: none;\n    display: inline-block;\n    top: 0; }\n    .pagination li:first-child {\n      left: 5%; }\n    .pagination li:last-child {\n      right: 5%; }\n  .pagination a {\n    font-size: 35px;\n    color: #c2c2c2; }\n    .pagination a:hover {\n      color: #333;\n      text-decoration: none; }\n\n.load {\n  margin-top: 100px;\n  text-align: center; }\n\n@media (min-width: 768px) {\n  .navbar {\n    display: none;\n    opacity: 0; }\n    .navbar li {\n      height: 80px;\n      line-height: 80px; }\n  .s-brand {\n    display: none; }\n  .res {\n    display: none; }\n  header {\n    height: 80px; } }\n\n@media (max-width: 768px) {\n  .brand {\n    display: none; }\n  html {\n    font-size: 14px; }\n  .s-brand {\n    display: inline-block;\n    padding: 20px 30px; }\n  .navbar {\n    width: 100%;\n    text-align: center;\n    padding: 0 30px;\n    height: 0;\n    opacity: 0;\n    overflow: hidden; }\n    .navbar li {\n      line-height: 40px; }\n  header {\n    min-height: 80px; }\n  .res a {\n    color: inherit;\n    -webkit-transition: transform .2s;\n    -moz-transition: transform .2s;\n    -ms-transition: transform .2s;\n    -o-transition: transform .2s;\n    transition: transform .2s;\n    position: absolute;\n    right: 20px;\n    top: 35px; }\n    .res a:hover {\n      text-decoration: none;\n      cursor: pointer;\n      -webkit-transform: rotate(-90deg);\n      -moz-transform: rotate(-90deg);\n      -ms-transform: rotate(-90deg);\n      -o-transform: rotate(-90deg);\n      transform: rotate(-90deg); } }\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\nhtml {\n  height: 100%;\n  font-size: 16px; }\n\nbody {\n  color: #333333;\n  height: 100%;\n  background-color: #f2f2f2;\n  font-size: 16px;\n  font-family: 'PT serif',\\5FAE\\8EDF\\6B63\\9ED1\\9AD4,\\5FAE\\8F6F\\96C5\\9ED1,\\534E\\6587\\7EC6\\9ED1,Microsoft Yahei,Hiragino Sans GB,sans-serif; }\n\n#app {\n  height: 100%; }\n\nheader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: 20;\n  background-color: #FFF;\n  -webkit-box-shadow: 0 0 5px 0 #333333;\n  -moz-box-shadow: 0 0 5px 0 #333333;\n  box-shadow: 0 0 5px 0 #333333; }\n\n.p-bar {\n  background-color: #000;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 3px; }\n\n.brand {\n  background-color: #000;\n  width: 200px;\n  height: 120px;\n  position: absolute;\n  left: 50%;\n  top: 0;\n  -webkit-transform: translateX(-50%);\n  -moz-transform: translateX(-50%);\n  -ms-transform: translateX(-50%);\n  -o-transform: translateX(-50%);\n  transform: translateX(-50%);\n  text-align: center;\n  padding: 20px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transition: all .3s;\n  -moz-transition: all .3s;\n  -ms-transition: all .3s;\n  -o-transition: all .3s;\n  transition: all .3s; }\n  .brand a {\n    color: #FFF;\n    text-decoration: none;\n    font-size: 24px;\n    margin-top: 20px; }\n  .brand p {\n    color: #e6e6e6;\n    font-size: .66rem; }\n  .brand:before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border-left: 100px solid transparent;\n    border-right: 100px solid transparent;\n    border-top: 60px solid #000;\n    position: absolute;\n    left: 0;\n    top: 120px; }\n  .brand.scroll {\n    left: 140px;\n    height: 80px;\n    line-height: 35px;\n    width: auto; }\n    .brand.scroll p {\n      display: none; }\n    .brand.scroll a {\n      font-size: 1.1rem; }\n    .brand.scroll:before {\n      display: none; }\n\n.search a {\n  text-decoration: none;\n  color: #333333;\n  position: absolute;\n  right: 20px;\n  top: 25px; }\n\n.more a {\n  text-decoration: none;\n  color: #333333;\n  position: absolute;\n  left: 20px;\n  top: 25px; }\n\n.navbar {\n  /* position:absolute;\r\n\tright:10%;\r\n\ttop:0; */\n  float: right;\n  padding-right: 80px;\n  height: 100%; }\n  .navbar ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n    height: 100%; }\n  .navbar li {\n    display: inline-block;\n    padding: 0 10px; }\n  .navbar a {\n    text-decoration: none;\n    color: #666666; }\n    .navbar a:hover {\n      text-decoration: underline;\n      color: #333333; }\n\n.search-input {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  opacity: 0;\n  background-color: #FFF;\n  z-index: -100;\n  -webkit-transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  -moz-transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  transform: perspective(1000px) rotateY(180deg) scale(0.1);\n  -webkit-transition: all .5s;\n  -moz-transition: all .5s;\n  -ms-transition: all .5s;\n  -o-transition: all .5s;\n  transition: all .5s; }\n  .search-input.open {\n    z-index: 500;\n    opacity: 1;\n    -webkit-transform: perspective(1000px) rotateY(0) scale(1);\n    -moz-transform: perspective(1000px) rotateY(0) scale(1);\n    transform: perspective(1000px) rotateY(0) scale(1); }\n\n.s-hints {\n  margin-top: 20px;\n  -webkit-border-radius: 8px;\n  -moz-border-radius: 8px;\n  border-radius: 8px;\n  opacity: 0;\n  -webkit-transition: all 1s;\n  -moz-transition: all 1s;\n  -ms-transition: all 1s;\n  -o-transition: all 1s;\n  transition: all 1s; }\n\n.s-close {\n  position: absolute;\n  right: 5%;\n  top: 5%;\n  -webkit-transform: rotate(50deg);\n  -moz-transform: rotate(50deg);\n  -ms-transform: rotate(50deg);\n  transform: rotate(50deg);\n  color: #CCC; }\n  .s-close:before {\n    content: '';\n    display: block;\n    border-top: 1px solid;\n    width: 40px; }\n  .s-close:after {\n    content: '';\n    display: block;\n    border-left: 1px solid;\n    width: 0;\n    height: 40px;\n    -webkit-transform: translate(20px, -20px) rotate(-10deg);\n    -moz-transform: translate(20px, -20px) rotate(-10deg);\n    -ms-transform: translate(20px, -20px) rotate(-10deg);\n    transform: translate(20px, -20px) rotate(-10deg); }\n  .s-close:hover {\n    color: #999999; }\n\n.input-group {\n  position: relative;\n  width: 45%;\n  margin: 0 auto; }\n  .input-group i {\n    color: #bfbfbf;\n    position: absolute;\n    left: 10px;\n    top: 87px; }\n  .input-group input {\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n    background-color: #e6e6e6;\n    margin-top: 80px;\n    font-size: 20px;\n    padding: 10px 50px;\n    width: 100%;\n    border: none;\n    -webkit-border-radius: 8px;\n    -moz-border-radius: 8px;\n    border-radius: 8px; }\n    .input-group input:focus {\n      outline: none; }\n\n.main {\n  padding-top: 170px;\n  margin-bottom: 100px;\n  min-height: 100%; }\n\nsection, .comment {\n  width: 70%;\n  margin: 0 auto;\n  margin-top: 50px;\n  padding: 15px 5%;\n  -webkit-box-shadow: 1px 1px 2px 0 #b3b3b3;\n  -moz-box-shadow: 1px 1px 2px 0 #b3b3b3;\n  box-shadow: 1px 1px 2px 0 #b3b3b3;\n  background-color: #FFF;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n  section h3, .comment h3 {\n    font-size: 1.5rem;\n    text-align: center; }\n  section a, .comment a {\n    color: inherit;\n    text-decoration: none; }\n    section a:hover, .comment a:hover {\n      color: #3333ff;\n      text-decoration: underline; }\n  section hr, .comment hr {\n    margin-top: 10px;\n    margin-bottom: 10px;\n    border-color: #ddd; }\n\n.pub-info {\n  text-align: center;\n  font-size: 1.2rem;\n  margin-bottom: 10px; }\n\narticle {\n  line-height: 1.6;\n  padding-bottom: 12px;\n  word-wrap: break-word;\n  word-break: break-all; }\n  article img {\n    max-width: 100%;\n    -webkit-border-radius: .5rem;\n    -moz-border-radius: .5rem;\n    border-radius: .5rem;\n    margin: 8px 0; }\n\n.read {\n  text-align: center;\n  margin-top: 10px;\n  font-size: 1.2em; }\n\n.other-info {\n  font-size: 15px;\n  padding: 0;\n  padding-top: 7px; }\n  .other-info ul {\n    padding: 0;\n    list-style: none; }\n  .other-info li {\n    display: inline-block; }\n  .other-info > li {\n    padding: 0 7px; }\n  .other-info .fa-tags {\n    margin-bottom: 10px; }\n    .other-info .fa-tags li {\n      padding: 0 4px;\n      font-size: 13px; }\n    .other-info .fa-tags li:first-child {\n      padding-left: 0; }\n\n.bl-transition {\n  -webkit-transition: all .6s ease-out;\n  -moz-transition: all .6s ease-out;\n  -ms-transition: all .6s ease-out;\n  -o-transition: all .6s ease-out;\n  transition: all .6s ease-out;\n  position: relative;\n  left: 0;\n  top: 0;\n  opacity: 1; }\n\n/** \r\n * enter:组件进入时的状态\r\n * leave:组件离开时的状态\r\n * 如果不设置leave,组件将保留\r\n * 如:翻页时,仍然存在前一页的内容\r\n */\n.bl-enter,\n.bl-leave {\n  position: relative;\n  left: 0;\n  top: -200px;\n  opacity: 0; }\n\nfooter {\n  position: relative;\n  color: #e6e6e6;\n  margin-top: 60px;\n  background-color: #333333;\n  padding: 40px 0 7px; }\n  footer a:hover, footer a:active {\n    color: inherit; }\n  footer a {\n    color: #e6e6e6;\n    text-decoration: none; }\n    footer a i {\n      -webkit-border-radius: 50%;\n      -moz-border-radius: 50%;\n      border-radius: 50%;\n      padding: 10px;\n      opacity: .5; }\n      footer a i:hover {\n        opacity: 1; }\n  footer li {\n    list-style: none;\n    display: inline-block;\n    margin-right: 10px;\n    margin-top: 10px; }\n  footer ul {\n    margin-top: 5px;\n    display: inline-block;\n    color: #e6e6e6;\n    font-size: 1.1rem; }\n  footer .fa-qq {\n    background-color: #55cff8; }\n  footer .fa-weibo {\n    background-color: #c83d20; }\n  footer .fa-github {\n    background-color: #afb6ca;\n    padding: 10px 11px; }\n  footer .fa-rss {\n    background-color: #FFCC33;\n    padding: 10px 12px; }\n\n.about-me {\n  padding-left: 5%; }\n  .about-me img {\n    position: relative;\n    top: -20px;\n    height: 100px;\n    width: 100px;\n    -webkit-border-radius: .4rem;\n    -moz-border-radius: .4rem;\n    border-radius: .4rem;\n    opacity: .5; }\n  .about-me blockquote {\n    margin-top: 0;\n    margin-bottom: 0;\n    margin-left: 5%;\n    border-left: 4px solid gray;\n    padding: 10px 0 10px 10px;\n    display: inline-block; }\n\n.copyright {\n  text-align: right;\n  font-size: 14px;\n  padding-right: 20px;\n  margin-top: 30px; }\n\n.follow-me {\n  padding-left: 5%; }\n\n@media (max-width: 768px) {\n  .copyright {\n    text-align: left;\n    padding-left: 5%;\n    margin-top: 10px; } }\n\n.pagination {\n  font-size: 0;\n  position: relative;\n  width: 70%;\n  margin: 0 auto;\n  margin-top: 20px;\n  padding: 0; }\n  .pagination li {\n    position: absolute;\n    list-style: none;\n    display: inline-block;\n    top: 0; }\n    .pagination li:first-child {\n      left: 5%; }\n    .pagination li:last-child {\n      right: 5%; }\n  .pagination a {\n    font-size: 35px;\n    color: #c2c2c2; }\n    .pagination a:hover {\n      color: #333;\n      text-decoration: none; }\n\n.load {\n  margin-top: 100px;\n  text-align: center; }\n\n@media (min-width: 768px) {\n  .navbar {\n    display: none;\n    opacity: 0; }\n    .navbar li {\n      height: 80px;\n      line-height: 80px; }\n  .s-brand {\n    display: none; }\n  .res {\n    display: none; }\n  header {\n    height: 80px; } }\n\n@media (max-width: 768px) {\n  .brand {\n    display: none; }\n  html {\n    font-size: 14px; }\n  .s-brand {\n    display: inline-block;\n    padding: 20px 30px; }\n  .navbar {\n    width: 100%;\n    text-align: center;\n    padding: 0 30px;\n    height: 0;\n    opacity: 0;\n    overflow: hidden; }\n    .navbar li {\n      line-height: 40px; }\n  header {\n    min-height: 80px; }\n  .res a {\n    color: inherit;\n    -webkit-transition: transform .2s;\n    -moz-transition: transform .2s;\n    -ms-transition: transform .2s;\n    -o-transition: transform .2s;\n    transition: transform .2s;\n    position: absolute;\n    right: 20px;\n    top: 35px; }\n    .res a:hover {\n      text-decoration: none;\n      cursor: pointer;\n      -webkit-transform: rotate(-90deg);\n      -moz-transform: rotate(-90deg);\n      -ms-transform: rotate(-90deg);\n      -o-transform: rotate(-90deg);\n      transform: rotate(-90deg); } }\n", ""]);
 	
 	// exports
 
@@ -12990,7 +13028,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./index.vue */ 24)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./index.vue */ 27)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13027,14 +13065,14 @@
 		},
 		components: {
 			'mySection': __webpack_require__(/*! ../components/section.vue */ 15),
-			'myPagination': __webpack_require__(/*! ../components/pagination.vue */ 18),
-			'loading': __webpack_require__(/*! ../components/loading.vue */ 21)
+			'myPagination': __webpack_require__(/*! ../components/pagination.vue */ 21),
+			'loading': __webpack_require__(/*! ../components/loading.vue */ 24)
 		},
 		route: {
 			data: function data(transition) {
 				var tmp_id = transition.to.params.id ? transition.to.params.id : 1;
 	
-				$.get(ghost.url.api('posts', { fields: 'title,image,id,meta_description,created_at,url', limit: '5', page: tmp_id })).done(function (data) {
+				$.get(ghost.url.api('posts', { fields: 'title,image,id,meta_description,created_at,slug,url', limit: '5', page: tmp_id, include: 'tags' })).done(function (data) {
 					transition.next({ pid: parseInt(tmp_id, 10), posts: data.posts, showload: false });
 				}).fail(function (err) {
 					console.log(err);
@@ -13056,7 +13094,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\section.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./section.vue */ 17)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./section.vue */ 20)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13086,33 +13124,86 @@
 	module.exports = {
 		props: ['post', 'identity'],
 		components: {
-			'myComment': __webpack_require__(/*! ../components/comment.vue */ 31)
+			'myComment': __webpack_require__(/*! ../components/comment.vue */ 17)
 		}
 	};
 
 /***/ },
 /* 17 */
+/*!************************************!*\
+  !*** ./src/components/comment.vue ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./comment.vue */ 18)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\comment.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./comment.vue */ 19)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "D:\\ghost_test\\content\\themes\\hole\\src\\components\\comment.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 18 */
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./~/babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/comment.vue ***!
+  \********************************************************************************************************************************************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = {
+		props: ['post_info']
+	};
+
+/***/ },
+/* 19 */
+/*!*************************************************************************************************************!*\
+  !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/comment.vue ***!
+  \*************************************************************************************************************/
+/***/ function(module, exports) {
+
+	module.exports = "\n<div id=\"disqus_thread\" v-show-comment=\"post_info\" class=\"comment\"></div>\n";
+
+/***/ },
+/* 20 */
 /*!*************************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/section.vue ***!
   \*************************************************************************************************************/
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>\n\t<section>\n\t\t<h3>\n\t\t\t<a v-link=\"{name:'post',params:{id:post.id}}\">{{post.title}}</a>\n\t\t</h3>\n\t\t<div class=\"pub-info\" v-f-time=\"post.created_at\"></div>\n\t\t<template v-if=\"identity\">\n\t\t\t<article>\n\t\t\t\t{{post.meta_description}}\n\t\t\t\t<img :src=\"post.image\" alt=\"pic\" v-if=\"post.image\">\n\t\t\t\t<div class=\"read\"><a v-link=\"{name:'post',params:{id:post.id}}\">阅读全文</a></div>\n\t\t\t</article>\n\t\t\t<hr>\n\t\t\t<ul class=\"other-info\">\n\t\t\t\t<li class=\"fa fa-comment\">&nbsp;<a href=\"#\">12</a></li>\n\t\t\t\t<li>\n\t\t\t\t\t<ul class=\"fa fa-tags\">\n\t\t\t\t\t\t<li><a href=\"#\">javascript</a></li>\n\t\t\t\t\t\t<li><a href=\"#\">python</a></li>\t\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</template>\n\t\t<template v-else>\n\t\t\t<article class=\"markdown-body\">\n\t\t\t\t{{{post.html}}}\n\t\t\t</article>\n\t\t</template>\n\t</section>\n\n\t<my-comment :post_info='post' v-if=\"!identity\"></my-comment> \n</div>\n";
+	module.exports = "\n<div>\n\t<section>\n\t\t<h3>\n\t\t\t<a v-link=\"{name:'post',params:{id:post.id}}\">{{post.title}}</a>\n\t\t</h3>\n\t\t<div class=\"pub-info\" v-f-time=\"post.created_at\"></div>\n\t\t<template v-if=\"identity\">\n\t\t\t<article>\n\t\t\t\t{{post.meta_description}}\n\t\t\t\t<img :src=\"post.image\" alt=\"pic\" v-if=\"post.image\">\n\t\t\t\t<div class=\"read\"><a v-link=\"{name:'post',params:{id:post.id}}\">阅读全文</a></div>\n\t\t\t</article>\n\t\t\t<hr>\n\t\t\t<ul class=\"other-info\">\n\t\t\t\t\n\t\t\t\t<li>\n\t\t\t\t\t<ul class=\"fa fa-tags\">\n\t\t\t\t\t\t<li v-for=\"tag in post.tags\" v-if=\"post.tags.length > 0\">\n\t\t\t\t\t\t\t<a href=\"#\">{{tag.name}}</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li v-if=\"post.tags.length == 0\">无标签</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\n\t\t\t\t<li class=\"fa fa-comment\">&nbsp;\n\t\t\t\t\t<a v-show-count=\"{slug:post.slug,id:post.id}\"></a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</template>\n\t\t<template v-else>\n\t\t\t<article class=\"markdown-body\">\n\t\t\t\t{{{post.html}}}\n\t\t\t</article>\n\t\t</template>\n\t</section>\n\n\t<my-comment :post_info='post' v-if=\"!identity\"></my-comment> \n</div>\n";
 
 /***/ },
-/* 18 */
+/* 21 */
 /*!***************************************!*\
   !*** ./src/components/pagination.vue ***!
   \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./pagination.vue */ 19)
+	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./pagination.vue */ 22)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\pagination.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./pagination.vue */ 20)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./pagination.vue */ 23)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13131,7 +13222,7 @@
 	})()}
 
 /***/ },
-/* 19 */
+/* 22 */
 /*!***********************************************************************************************************************************************************************!*\
   !*** ./~/babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/pagination.vue ***!
   \***********************************************************************************************************************************************************************/
@@ -13183,7 +13274,7 @@
 	};
 
 /***/ },
-/* 20 */
+/* 23 */
 /*!****************************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/pagination.vue ***!
   \****************************************************************************************************************/
@@ -13192,14 +13283,14 @@
 	module.exports = "\n<ul class=\"pagination\">\n\t<li v-show=\"canPrev\"><a href=\"#\" @click.stop.prevent=\"forward\">&laquo;</a></li>\n\t<li v-show=\"canNext\"><a href=\"#\" @click.stop.prevent=\"backward\">&raquo;</a></li>\n</ul>\n";
 
 /***/ },
-/* 21 */
+/* 24 */
 /*!************************************!*\
   !*** ./src/components/loading.vue ***!
   \************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./loading.vue */ 22)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./loading.vue */ 25)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13218,16 +13309,16 @@
 	})()}
 
 /***/ },
-/* 22 */
+/* 25 */
 /*!*************************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/loading.vue ***!
   \*************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<div class=\"load\">\n\t<img src=\"" + __webpack_require__(/*! ../load.gif */ 23) + "\" alt=\"load\" width=\"60\" height=\"64\">\n</div>\n";
+	module.exports = "\n<div class=\"load\">\n\t<img src=\"" + __webpack_require__(/*! ../load.gif */ 26) + "\" alt=\"load\" width=\"60\" height=\"64\">\n</div>\n";
 
 /***/ },
-/* 23 */
+/* 26 */
 /*!**********************!*\
   !*** ./src/load.gif ***!
   \**********************/
@@ -13236,7 +13327,7 @@
 	module.exports = __webpack_require__.p + "2dc52a5cdfef7d0d9aea515cf900b871.gif";
 
 /***/ },
-/* 24 */
+/* 27 */
 /*!******************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/index.vue ***!
   \******************************************************************************************************/
@@ -13245,19 +13336,19 @@
 	module.exports = "\n<loading v-if=\"showload\"></loading>\n<my-section :post='post' :identity='true' v-for=\"post in posts\" transition=\"bl\"></my-section>\n<my-pagination :pid='pid'></my-pagination>\n";
 
 /***/ },
-/* 25 */
+/* 28 */
 /*!****************************!*\
   !*** ./src/views/post.vue ***!
   \****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./post.vue */ 26)
+	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./post.vue */ 29)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\post.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./post.vue */ 27)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./post.vue */ 30)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13276,7 +13367,7 @@
 	})()}
 
 /***/ },
-/* 26 */
+/* 29 */
 /*!************************************************************************************************************************************************************!*\
   !*** ./~/babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./~/vue-loader/lib/selector.js?type=script&index=0!./src/views/post.vue ***!
   \************************************************************************************************************************************************************/
@@ -13308,7 +13399,7 @@
 	};
 
 /***/ },
-/* 27 */
+/* 30 */
 /*!*****************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/post.vue ***!
   \*****************************************************************************************************/
@@ -13317,19 +13408,19 @@
 	module.exports = "\n<my-section :post='post_content'></my-section>\t\n";
 
 /***/ },
-/* 28 */
+/* 31 */
 /*!***************************!*\
   !*** ./src/views/404.vue ***!
   \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./404.vue */ 29)
+	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./404.vue */ 32)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\404.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./404.vue */ 30)
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./404.vue */ 33)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13348,7 +13439,7 @@
 	})()}
 
 /***/ },
-/* 29 */
+/* 32 */
 /*!***********************************************************************************************************************************************************!*\
   !*** ./~/babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./~/vue-loader/lib/selector.js?type=script&index=0!./src/views/404.vue ***!
   \***********************************************************************************************************************************************************/
@@ -13359,66 +13450,13 @@
 	module.exports = {};
 
 /***/ },
-/* 30 */
+/* 33 */
 /*!****************************************************************************************************!*\
   !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/views/404.vue ***!
   \****************************************************************************************************/
 /***/ function(module, exports) {
 
 	module.exports = "\n\n";
-
-/***/ },
-/* 31 */
-/*!************************************!*\
-  !*** ./src/components/comment.vue ***!
-  \************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(/*! !babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./../../~/vue-loader/lib/selector.js?type=script&index=0!./comment.vue */ 32)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src\\components\\comment.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../~/vue-loader/lib/selector.js?type=template&index=0!./comment.vue */ 33)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "D:\\ghost_test\\content\\themes\\hole\\src\\components\\comment.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 32 */
-/*!********************************************************************************************************************************************************************!*\
-  !*** ./~/babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false!./~/vue-loader/lib/selector.js?type=script&index=0!./src/components/comment.vue ***!
-  \********************************************************************************************************************************************************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	module.exports = {
-		props: ['post_info']
-	};
-
-/***/ },
-/* 33 */
-/*!*************************************************************************************************************!*\
-  !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./src/components/comment.vue ***!
-  \*************************************************************************************************************/
-/***/ function(module, exports) {
-
-	module.exports = "\n<div id=\"disqus_thread\" v-show-comment=\"post_info\" class=\"comment\"></div>\n";
 
 /***/ }
 /******/ ]);

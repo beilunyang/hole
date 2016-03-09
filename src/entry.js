@@ -43,13 +43,12 @@ Vue.directive('f-time',function(value){
 
 Vue.directive('show-comment',{
 	bind:function(){
-		(function() { 
-		var d = document, s = d.createElement('script');
+		var d = document,
+			s = d.createElement('script');
 		s.id = 'disqus';
 		s.src = '//bitibiti.disqus.com/embed.js';
 		s.setAttribute('data-timestamp', +new Date());
 		(d.head || d.body).appendChild(s);
-		})();
 	},
 	update:function(newValue,oldValue){
 		var disqus_config = function () {
@@ -61,6 +60,45 @@ Vue.directive('show-comment',{
 		var dis = document.getElementById('disqus');
 		dis.parentNode.removeChild(dis);
 	}
+});
+
+Vue.directive('show-count',{
+	/*bind:function(){
+			var d = document,
+				dc = d.getElementById('disqus-count');
+			if(!dc){
+				var s = d.createElement('script');
+				s.id = 'disqus-count';
+				s.src = '//bitibiti.disqus.com/count.js';
+				s.async = 'async';
+				(d.head || d.body).appendChild(s);
+			}
+	},*/
+	update:function(newValue,oldValue){
+		var c = document.getElementById('disqus-count');
+		if(c){
+			c.parentNode.removeChild(c);
+		}
+		var d = document,
+			dc = d.getElementById('disqus-count');
+		if(!dc){
+			var s = d.createElement('script');
+			s.id = 'disqus-count';
+			s.src = '//bitibiti.disqus.com/count.js';
+			s.async = 'async';
+			(d.head || d.body).appendChild(s);
+		}
+
+		this.el.href = '/' + newValue.slug + '#disqus_thread';
+		this.el.dataset.disqusIdentifier =  newValue.id;
+		
+	}/*,
+	unbind:function(){
+		var c = document.getElementById('disqus-count');
+		if(c){
+			c.parentNode.removeChild(c);
+		}
+	}*/
 });
 
 var App = Vue.extend({});
