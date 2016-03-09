@@ -1,4 +1,5 @@
 <template>
+	<h1><a href="http://localhost:2368/#!/post/1#disqus_thread" data-disqus-identifier="1"></a></h1>
 	<loading v-if="showload"></loading>
 	<my-section :post='post' :identity='true' v-for="post in posts" transition="bl"></my-section>
 	<my-pagination :pid='pid'></my-pagination>

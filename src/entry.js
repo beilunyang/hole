@@ -42,63 +42,29 @@ Vue.directive('f-time',function(value){
 });
 
 Vue.directive('show-comment',{
-	bind:function(){
-		var d = document,
-			s = d.createElement('script');
-		s.id = 'disqus';
-		s.src = '//bitibiti.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-	},
 	update:function(newValue,oldValue){
-		var disqus_config = function () {
-		this.page.url = newValue.url;
-		this.page.identifier = newValue.id;
-		} 
-	},
-	unbind:function(){
-		var dis = document.getElementById('disqus');
-		dis.parentNode.removeChild(dis);
+		if(newValue.id){
+			DISQUS.reset({
+			  reload: true,
+			  config: function () {  
+			    this.page.identifier = newValue.id;  
+			    this.page.url = location.href;
+			  }
+			});
+		}
 	}
 });
 
 Vue.directive('show-count',{
-	/*bind:function(){
-			var d = document,
-				dc = d.getElementById('disqus-count');
-			if(!dc){
-				var s = d.createElement('script');
-				s.id = 'disqus-count';
-				s.src = '//bitibiti.disqus.com/count.js';
-				s.async = 'async';
-				(d.head || d.body).appendChild(s);
-			}
-	},*/
 	update:function(newValue,oldValue){
-		var c = document.getElementById('disqus-count');
-		if(c){
-			c.parentNode.removeChild(c);
+		if(newValue.id){
+			this.el.href = location.href + 'post/' + newValue.id + '#disqus_thread';
+			this.el.dataset.disqusIdentifier = newValue.id;
+			DISQUSWIDGETS.getCount({reset:true});
+			//disqus count 还是不行。。。
 		}
-		var d = document,
-			dc = d.getElementById('disqus-count');
-		if(!dc){
-			var s = d.createElement('script');
-			s.id = 'disqus-count';
-			s.src = '//bitibiti.disqus.com/count.js';
-			s.async = 'async';
-			(d.head || d.body).appendChild(s);
-		}
+	}
 
-		this.el.href = '/' + newValue.slug + '#disqus_thread';
-		this.el.dataset.disqusIdentifier =  newValue.id;
-		
-	}/*,
-	unbind:function(){
-		var c = document.getElementById('disqus-count');
-		if(c){
-			c.parentNode.removeChild(c);
-		}
-	}*/
 });
 
 var App = Vue.extend({});
