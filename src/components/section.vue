@@ -17,15 +17,12 @@
 					<li>
 						<ul class="fa fa-tags">
 							<li v-for="tag in post.tags" v-if="post.tags.length > 0">
-								<a href="#">{{tag.name}}</a>
+								<a :href="'tag/' + tag.slug">{{tag.name}}</a>
 							</li>
 							<li v-if="post.tags.length == 0">无标签</li>
 						</ul>
 					</li>
 
-					<li class="fa fa-comment">&nbsp;
-						<a v-show-count="{slug:post.slug,id:post.id}"></a>
-					</li>
 				</ul>
 			</template>
 			<template v-else>

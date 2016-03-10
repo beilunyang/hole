@@ -55,17 +55,21 @@ Vue.directive('show-comment',{
 	}
 });
 
-Vue.directive('show-count',{
+/*Vue.directive('show-count',{
+	//有谁能帮忙解决首页获取disqus评论数的问题。此方法能行，但不优雅。
 	update:function(newValue,oldValue){
+		var s = document.createElement('script');
+		s.src = '//bitibiti.disqus.com/count.js';
+		(document.head || document.body).appendChild(s);
 		if(newValue.id){
-			this.el.href = location.href + 'post/' + newValue.id + '#disqus_thread';
+			this.el.href = location.host + '/#!/post/' + newValue.id + '#disqus_thread';
 			this.el.dataset.disqusIdentifier = newValue.id;
+			this.el.className = 'go-comment';
 			DISQUSWIDGETS.getCount({reset:true});
-			//disqus count 还是不行。。。
 		}
 	}
 
-});
+});*/
 
 var App = Vue.extend({});
 router.start(App,'#app');

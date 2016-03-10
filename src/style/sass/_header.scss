@@ -4,11 +4,12 @@ header{
 	left:0;
 	width:100%;
 	z-index:20;
-	background-color:#FFF;
+	background-color:rgba(255,255,255,1);
 	-webkit-box-shadow:0 0 5px 0 lighten(#000,20%);
 	-moz-box-shadow:0 0 5px 0 lighten(#000,20%);
 	box-shadow:0 0 5px 0 lighten(#000,20%);
 }
+
 .p-bar{
 	background-color:#000;
 	position:absolute;
@@ -34,11 +35,11 @@ header{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-transition:all .3s;
-	-moz-transition:all .3s;
-	-ms-transition:all .3s;
-	-o-transition:all .3s;
-	transition:all .3s;
+	-webkit-transition:all .8s;
+	-moz-transition:all .8s;
+	-ms-transition:all .8s;
+	-o-transition:all .8s;
+	transition:all .8s;
 	a{
 		color:#FFF;
 		text-decoration:none;
