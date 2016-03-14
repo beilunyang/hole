@@ -23,6 +23,7 @@ header{
 	width:200px;
 	height:120px;
 	position:absolute;
+	z-index:999;
 	left:50%;
 	top:0;
 	-webkit-transform: translateX(-50%);

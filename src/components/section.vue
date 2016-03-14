@@ -13,11 +13,10 @@
 				</article>
 				<hr>
 				<ul class="other-info">
-					
 					<li>
 						<ul class="fa fa-tags">
 							<li v-for="tag in post.tags" v-if="post.tags.length > 0">
-								<a :href="'tag/' + tag.slug">{{tag.name}}</a>
+								<a :href="'/tag/' + tag.slug">{{tag.name}}</a>
 							</li>
 							<li v-if="post.tags.length == 0">无标签</li>
 						</ul>
