@@ -18,7 +18,7 @@
 	}
 }
 
-@media(max-width:768px){
+@media(max-width:767px){
 	.brand{
 		display:none;
 	}
@@ -63,5 +63,13 @@
 		right:20px;
 		top:35px;
 	}
+	.copyright{
+		text-align:left;
+		padding-left:5%;
+		margin-top:10px;
+	}
 }
+
+
+
 

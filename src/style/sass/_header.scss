@@ -80,16 +80,6 @@ header{
 	}
 }
 
-.search{
-	a{
-		text-decoration:none;
-		color:lighten(#000,20%);
-		position:absolute;
-		right:20px;
-		top:25px;
-	}
-}
-
 .more{
 	a{
 		text-decoration:none;
@@ -97,5 +87,8 @@ header{
 		position: absolute;
 		left:20px;
 		top:25px;
+	}
+	&.c{
+		transform:rotate(-90deg);
 	}
 }

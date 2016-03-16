@@ -1,0 +1,10 @@
+<ul class="pagination">
+	{{#if prev}}
+		<li><a href="{{page_url prev}}">&laquo;</a></li>
+	{{/if}}
+	{{#if next}}
+		<!-- 偷懒 -->
+		<li></li>
+		<li><a href="{{page_url next}}">&raquo;</a></li>
+	{{/if}}
+</ul>

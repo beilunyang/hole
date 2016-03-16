@@ -4,8 +4,8 @@ var	webpack = require('webpack'),
 module.exports = {
 	entry:'./src/entry.js',
 	output:{
-		path:'./static',
-		filename:'bulid.js'
+		path:'./assets',
+		filename:'b.js'
 	},
 	module:{
 		loaders:[
@@ -15,16 +15,29 @@ module.exports = {
 			},
 			{
 				test:/\.scss$/,
-				loader:'style!css!sass'
+				loader:ExtractTextPlugin.extract('style','css!sass')
 			},
 			{
 				test:/\.css$/,
-				loader:'style!css'
+				loader:ExtractTextPlugin.extract('style','css')
 			},
 			{
 				test:/\.(gif|png|jpg|jpeg)$/,
 				loader:'url?limit=8192'
 			}
 		]
-	}
+	},
+	plugins:[
+		new ExtractTextPlugin('b.css'),
+		new webpack.DefinePlugin({
+		    'process.env': {
+		    	NODE_ENV: '"production"'
+		    	}
+			}),
+		new webpack.optimize.UglifyJsPlugin({
+		    compress: {
+		    	warnings: false
+		    	}
+		   })
+	]
 }

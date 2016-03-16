@@ -2,12 +2,15 @@
 <html lang="zh-CN">
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 		<meta name="description" content="{{meta_description}}">
 		<title>{{meta_title}}</title>
-		<link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="shortcut icon" href="{{asset 'favicon.ico'}}" type="image/x-icon">
+		<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{asset 'b.css'}}">
 		{{ghost_head}}
 	</head>
 	<body>
@@ -20,7 +23,7 @@
 				</div>
 				<div class="res">
 					<div class="s-brand">
-						<img src="logo.png" alt="brand" height='50'>
+						<img src="{{asset 'logo.png'}}" alt="brand" height='50'>
 					</div>
 					<a class="fa fa-navicon fa-lg more"></a>
 				</div>
@@ -37,13 +40,15 @@
 							{{@blog.description}}
 						</blockquote>
 					</div>
+					<div class="col-sm-6">
+						<!-- 不知道放什么 -->
+					</div>
 				</div>
 				<div class="row">
 					<ul class="follow-me col-sm-6">
-						<li><a href="#"><i class="fa fa-qq"></i></a></li>
-						<li><a href="#"><i class="fa fa-weibo"></i></a></li>
-						<li><a href="#"><i class="fa fa-github"></i></a></li>
-						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+						<li><a href="https://weibo.com/rijufansjun" target="_blank"><i class="fa fa-weibo"></i></a></li>
+						<li><a href="https://github.com/beilunyang" target="_blank"><i class="fa fa-github"></i></a></li>
+						<li><a href="/rss"><i class="fa fa-rss" target="_blank"></i></a></li>
 					</ul>
 					<p class="copyright col-sm-6">Copyright © 2015 <a href="https://bitibiti.com">beilun</a> All Rights Reserved</p>
 				</div>
@@ -54,6 +59,6 @@
 		</script>
 		<script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
 		<script type="text/javascript" src="//bitibiti.disqus.com/embed.js"></script>
-		<script type="text/javascript" src="{{asset 'bulid.js'}}"></script>
+		<script type="text/javascript" src="{{asset 'b.js'}}"></script>
 	</body>
 </html>

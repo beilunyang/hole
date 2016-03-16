@@ -7,11 +7,13 @@ $(function(){
 	$('.more').on('click',function(){
 		if(isShow){
 			navbar.animate({'height':0,'opacity':1},'fast');
+			$(this).addClass('c');
 			return isShow = false;
 		}
 
 		navbar.css({'display':'block'});
 		navbar.animate({'height':'100px','opacity':1},'fast');
+		$(this).removeClass('c');
 		isShow = true;
 	});
 

@@ -20,9 +20,12 @@
 	a{
 		font-size:35px;
 		color:#c2c2c2;
-		&:hover{
+		&:hover,
+		&:active,
+		&:focus{
 			color:#333;
 			text-decoration:none;
 		}
 	}
+
 }

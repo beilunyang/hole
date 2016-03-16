@@ -1,13 +1,15 @@
 footer{
-	a:hover,a:active{
-		color:inherit;
-	}
 	position:relative;
 	color:darken(#FFF,10%);
 	margin-top:60px;
 	background-color:lighten(#000,20%);
 	padding:40px 0 7px;
 	a{
+		&:hover,
+		&:active,
+		&:focus{
+			color:inherit;
+		}
 		color:darken(#FFF,10%);
 		text-decoration:none;
 		i{
@@ -60,12 +62,11 @@ footer{
 		-moz-border-radius:.4rem;
 		border-radius:.4rem;
 		opacity:.5;
+		margin-right:5%;
 
 	}
 	blockquote{
-		margin-top:0;
-		margin-bottom:0;
-		margin-left:5%;
+		margin:0;
 		border-left:4px solid lighten(#000,50%);
 		padding:10px 0 10px 10px;
 		display:inline-block;	
@@ -83,12 +84,3 @@ footer{
 	padding-left:5%;
 }
 
-	
-
-@media (max-width:768px){
-	.copyright{
-		text-align:left;
-		padding-left:5%;
-		margin-top:10px;
-	}
-}
