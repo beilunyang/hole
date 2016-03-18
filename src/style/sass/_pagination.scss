@@ -22,7 +22,8 @@
 		color:#c2c2c2;
 		&:hover,
 		&:active,
-		&:focus{
+		&:focus,
+		&:visited{
 			color:#333;
 			text-decoration:none;
 		}

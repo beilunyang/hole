@@ -1,4 +1,5 @@
 <template>
+	<loading v-if="showload"></loading>
 	<my-section :post='post_content'></my-section>	
 </template>
 
@@ -11,7 +12,8 @@
 			}
 		},
 		components:{
-			mySection:require('../components/section.vue')
+			mySection: require('../components/section.vue'),
+			loading: require('../components/loading.vue')
 		},
 		route:{
 			data:function(transition){

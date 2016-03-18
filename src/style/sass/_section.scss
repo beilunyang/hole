@@ -8,13 +8,14 @@ section{
 	margin:0 auto;
 	margin-top:50px;
 	padding:15px 5%;
-	-webkit-box-shadow:1px 1px 2px 0 darken(#CCC,10%);
-	-moz-box-shadow:1px 1px 2px 0 darken(#CCC,10%);
-	box-shadow:1px 1px 2px 0 darken(#CCC,10%);
+	box-shadow:1px 1px 2px 0px darken(#CCC,10%);
 	background-color:#FFF;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
 	box-sizing:border-box;
+	
+	&:hover{
+		box-shadow:0px 0px 1px 1px #CCC inset;
+	}
+
 	h3{
 		font-size:1.5rem;
 		text-align:center;
@@ -46,8 +47,6 @@ article{
 	word-break:break-all;
 	img{
 		max-width:100%;
-		-webkit-border-radius:.5rem;
-		-moz-border-radius:.5rem;
 		border-radius:.5rem;
 		margin:8px 0;
 	}
@@ -84,10 +83,6 @@ article{
 }
 
 .bl-transition{
-	-webkit-transition:all .6s ease-out;
-	-moz-transition:all .6s ease-out;
-	-ms-transition:all .6s ease-out;
-	-o-transition:all .6s ease-out;
 	transition:all .6s ease-out;
 	position:relative;
 	left:0;

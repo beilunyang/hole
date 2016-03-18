@@ -45,18 +45,10 @@
 	}
 	.res a{
 		color:inherit;
-		-webkit-transition:transform .2s;
-				-moz-transition:transform .2s;
-				-ms-transition:transform .2s;
-				-o-transition:transform .2s;
-				transition:transform .2s;		
+		transition:transform .2s;		
 		&:hover{
 			text-decoration:none;
 			cursor:pointer;
-			-webkit-transform:rotate(-90deg);
-			-moz-transform:rotate(-90deg);
-			-ms-transform:rotate(-90deg);
-			-o-transform:rotate(-90deg);
 			transform:rotate(-90deg);
 		}
 		position:absolute;

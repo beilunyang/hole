@@ -5,8 +5,6 @@ header{
 	width:100%;
 	z-index:20;
 	background-color:rgba(255,255,255,1);
-	-webkit-box-shadow:0 0 5px 0 lighten(#000,20%);
-	-moz-box-shadow:0 0 5px 0 lighten(#000,20%);
 	box-shadow:0 0 5px 0 lighten(#000,20%);
 }
 
@@ -26,20 +24,10 @@ header{
 	z-index:999;
 	left:50%;
 	top:0;
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
 	text-align:center;
 	padding:20px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-transition:all .8s;
-	-moz-transition:all .8s;
-	-ms-transition:all .8s;
-	-o-transition:all .8s;
 	transition:all .8s;
 	a{
 		color:#FFF;
