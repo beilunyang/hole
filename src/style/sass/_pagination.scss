@@ -20,13 +20,20 @@
 	a{
 		font-size:35px;
 		color:#c2c2c2;
-		&:hover,
+		
+		&:hover{
+			color:#333 !important;
+			text-decoration:none;
+		}
+
 		&:active,
 		&:focus,
 		&:visited{
-			color:#333;
-			text-decoration:none;
+			font-size: 35px;
+			color: #c2c2c2;
 		}
+
 	}
+
 
 }

@@ -1,5 +1,7 @@
 footer{
-	position:relative;
+	position:absolute;
+	width: 100%;
+	z-index: 20;
 	color:darken(#FFF,10%);
 	margin-top:60px;
 	background-color:lighten(#000,20%);
