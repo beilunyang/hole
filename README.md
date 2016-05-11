@@ -1,5 +1,5 @@
 # hole
-just a ghostblog themes  
+just a ghostblog themes 一个基于vuejs开发的ghost博客主题  
 [demo](https://bitibiti.com)
 ###使用方法
 * 将hole放入ghost themes文件夹中
