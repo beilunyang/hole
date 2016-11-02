@@ -1,16 +1,16 @@
 <template>
 	<div>
-		<section>
+		<article>
 			<h3>
 				<a v-link="{name:'post',params:{id:post.id}}">{{post.title}}</a>
 			</h3>
 			<div class="pub-info" v-f-time="post.created_at"></div>
 			<template v-if="identity">
-				<article>
+				<div class="content">
 					{{post.meta_description}}
 					<img :src="post.image" alt="pic" v-if="post.image">
 					<div class="read"><a v-link="{name:'post',params:{id:post.id}}">阅读全文</a></div>
-				</article>
+				</div>
 				<hr>
 				<ul class="other-info">
 					<li>
@@ -25,11 +25,11 @@
 				</ul>
 			</template>
 			<template v-else>
-				<article class="markdown-body">
+				<div class="content markdown-body">
 					{{{post.html}}}
-				</article>
+				</div>
 			</template>
-		</section>
+		</article>
 
 		<my-comment :post_info='post' v-if="!identity"></my-comment> 
 	</div>

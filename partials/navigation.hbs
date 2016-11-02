@@ -1,7 +1,8 @@
 <nav class="navbar">
 	<ul>
 		{{#foreach navigation}}
-			<li><a href="{{ url absolute='true' }}">{{ label }}</a></li>
+			<!-- <li><a href="{{ url absolute='true' }}">{{ label }}</a></li> -->
+			<li><a v-link="{name: 'index'}">{{ label }}</a></li>
 		{{/foreach}}
 	</ul>
 </nav>

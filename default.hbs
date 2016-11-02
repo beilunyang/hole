@@ -18,14 +18,14 @@
 			<header>
 				<div class="p-bar"></div>
 				<div class="brand">
-					<a href="/">{{@blog.title}}</a>
+					<a v-link="{name: 'index'}">{{@blog.title}}</a>
 					<p title="村上春树">没有十全十美的文章，就犹如没有彻头彻尾的绝望</p>
 				</div>
 				<div class="res">
 					<div class="s-brand">
-						<img src="{{asset 'logo.png'}}" alt="brand" height='50'>
+						<img src="{{asset 'logo.png'}}" alt="brand" height="50">
 					</div>
-					<a class="fa fa-navicon fa-lg more"></a>
+					<a class="fa fa-navicon fa-lg more" href="#"></a>
 				</div>
 				{{navigation}}
 			</header>
@@ -35,7 +35,7 @@
 			<footer class="container-fluid">
 				<div class="row">
 					<div class="about-me col-sm-6">
-						<img src="{{@blog.logo}}" alt="avator" title="don't touch me~Haitai">
+						<img src="{{@blog.logo}}" alt="avator" title="don't touch me~Hentai">
 						<blockquote>
 							个人简介:95年生,男,双性恋,在校学生,伪前端,非科班.<br>			   			爱好:追番,撸码,睡觉(～﹃～)~zZ......<br>
 							常用语言:javascript,中文
@@ -59,7 +59,7 @@
 			var pages = {{pagination.pages}};
 		</script>
 		<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
-		<script type="text/javascript" src="//bitibiti.disqus.com/embed.js"></script>
 		<script type="text/javascript" src="{{asset 'b.js'}}"></script>
+		<script type="text/javascript" src="{{asset 'disqus.js'}}"></script>
 	</body>
 </html>

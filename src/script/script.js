@@ -13,6 +13,7 @@ $(function(){
 		navbar.css({'display':'block'});
 		navbar.animate({'height':'75px','opacity':1},'fast');
 		isShow = true;
+		return false;
 	});
 
 	$(window).on('scroll',function(){
