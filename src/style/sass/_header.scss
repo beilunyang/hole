@@ -39,9 +39,7 @@ header{
 		color:darken(#FFF,10%);
 		font-size:.66rem;
 	}
-	 &:before{
-		content:'';
-		display:block;
+	.triangle{
 		width:0;
 		height:0;
 		border-left:100px solid transparent;
@@ -61,9 +59,6 @@ header{
 		}
 		a{
 			font-size:1.1rem;
-		}
-		&:before{
-			display:none;
 		}
 	}
 }

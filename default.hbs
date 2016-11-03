@@ -18,6 +18,7 @@
 			<header>
 				<div class="p-bar"></div>
 				<div class="brand">
+					<div class="triangle"></div>
 					<a v-link="{name: 'index'}">{{@blog.title}}</a>
 					<p title="村上春树">没有十全十美的文章，就犹如没有彻头彻尾的绝望</p>
 				</div>
@@ -58,7 +59,7 @@
 		<script>
 			var pages = {{pagination.pages}};
 		</script>
-		<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 		<script type="text/javascript" src="{{asset 'b.js'}}"></script>
 		<script type="text/javascript" src="{{asset 'disqus.js'}}"></script>
 	</body>

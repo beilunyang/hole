@@ -19,7 +19,7 @@
 }
 
 @media(max-width:767px){
-	section{
+	article{
 		width: 75%;
 	}
 
@@ -31,7 +31,7 @@
 	}
 	.s-brand{
 		display:inline-block;
-		padding:20px 30px;
+		padding:15px 30px;
 	}
 	.navbar{
 		width:100%;
@@ -40,9 +40,7 @@
 		height:0;
 		opacity:0;
 		overflow:hidden;
-		li{
-			line-height:40px;
-		}
+		
 	}
 	header{
 		min-height:80px;
@@ -57,7 +55,7 @@
 		}
 		position:absolute;
 		right:20px;
-		top:35px;
+		top:32px;
 	}
 	.copyright{
 		text-align:left;
@@ -67,7 +65,7 @@
 }
 
 @media (max-width: 512px){
-	section{
+	article{
 		width: 85%;
 	}
 }

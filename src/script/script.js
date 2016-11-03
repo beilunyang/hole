@@ -1,8 +1,11 @@
 $(function(){
+
 	var isShow = false,
+		haveScrollClass = false,
 	    brand = $('.brand'),
 	    head = $('header'),
-	    navbar = $('.navbar');
+	    navbar = $('.navbar'),
+	    triangle = $('.triangle');
 
 	$('.more').on('click',function(){
 		if(isShow){
@@ -11,18 +14,28 @@ $(function(){
 		}
 
 		navbar.css({'display':'block'});
-		navbar.animate({'height':'75px','opacity':1},'fast');
+		navbar.animate({'height':40,'opacity':1},'fast');
 		isShow = true;
 		return false;
 	});
 
 	$(window).on('scroll',function(){
-		if($(this).scrollTop()>80){
+		if($(this).scrollTop()>80 && !haveScrollClass){
 			brand.addClass('scroll');
+			triangle.css({'display':'none','opacity':0});
 			navbar.css('display','block')
 				  .animate({'opacity':1},1000);
-			$(this).off('scroll');
+			return haveScrollClass = true;
 		}
+
+		if ($(this).scrollTop()<=80 && haveScrollClass){
+			brand.removeClass('scroll');
+			triangle.css({'display':'block'})
+					.delay(800)
+					.animate({'opacity':1}, 'fast');
+			haveScrollClass = false;
+		}
+
 	});
 
 
