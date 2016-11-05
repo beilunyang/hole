@@ -41,16 +41,21 @@ Vue.directive('f-time',function(value){
 	}
 });
 
+//disqus被墙，无奈只能用多说了/(ㄒoㄒ)/~~
 Vue.directive('show-comment',{
 	update:function(newValue,oldValue){
 		if(newValue.id){
-			DISQUS.reset({
-			  reload: true,
-			  config: function () {  
-			    this.page.identifier = newValue.id;  
-			    this.page.url = location.href;
-			  }
-			});
+			var el = this.el; //直接操作DOM
+			el.setAttribute('data-thread-key', newValue.id);
+			el.setAttribute('data-url', location.href);
+			DUOSHUO.EmbedThread(el);
+			// DISQUS.reset({
+			//   reload: true,
+			//   config: function () {  
+			//     this.page.identifier = newValue.id;  
+			//     this.page.url = location.href;
+			//   }
+			// });
 		}
 	}
 });

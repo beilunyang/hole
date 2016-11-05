@@ -19,7 +19,7 @@
 				<div class="p-bar"></div>
 				<div class="brand">
 					<div class="triangle"></div>
-					<a v-link="{name: 'index'}">{{@blog.title}}</a>
+					<a href="/#!/">{{@blog.title}}</a>
 					<p title="村上春树">没有十全十美的文章，就犹如没有彻头彻尾的绝望</p>
 				</div>
 				<div class="res">
@@ -58,9 +58,11 @@
 		</div>
 		<script>
 			var pages = {{pagination.pages}};
+			// duoshuo
+			var duoshuoQuery = {short_name:'btniang'};
 		</script>
+		<script type="text/javascript" src="//static.duoshuo.com/embed.js"></script>
 		<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 		<script type="text/javascript" src="{{asset 'b.js'}}"></script>
-		<script type="text/javascript" src="{{asset 'disqus.js'}}"></script>
 	</body>
 </html>

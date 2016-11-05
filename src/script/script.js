@@ -1,7 +1,6 @@
 $(function(){
 
 	var isShow = false,
-		haveScrollClass = false,
 	    brand = $('.brand'),
 	    head = $('header'),
 	    navbar = $('.navbar'),
@@ -20,22 +19,13 @@ $(function(){
 	});
 
 	$(window).on('scroll',function(){
-		if($(this).scrollTop()>80 && !haveScrollClass){
+		if($(this).scrollTop()>80){
 			brand.addClass('scroll');
-			triangle.css({'display':'none','opacity':0});
+			triangle.css({'display':'none'});
 			navbar.css('display','block')
 				  .animate({'opacity':1},1000);
-			return haveScrollClass = true;
+			$(this).off('scroll');
 		}
-
-		if ($(this).scrollTop()<=80 && haveScrollClass){
-			brand.removeClass('scroll');
-			triangle.css({'display':'block'})
-					.delay(800)
-					.animate({'opacity':1}, 'fast');
-			haveScrollClass = false;
-		}
-
 	});
 
 
