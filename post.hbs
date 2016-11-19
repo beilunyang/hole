@@ -1,13 +1,13 @@
 {{!< default}}
 
 {{#post}}
-	<section>
+	<article>
 		<h3>
 			<a href="javascript:;">{{title}}</a>
 		</h3>
 		<div class="pub-info" >{{date format="YYYY/MM/DD"}}</div>
-		<article class="markdown-body">
+		<div class="content markdown-body">
 			{{content}}
-		</article>
-	</section>
+		</div>
+	</article>
 {{/post}}

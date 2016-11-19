@@ -48,7 +48,9 @@ Vue.directive('show-comment',{
 			var el = this.el; //直接操作DOM
 			el.setAttribute('data-thread-key', newValue.id);
 			el.setAttribute('data-url', location.href);
-			DUOSHUO.EmbedThread(el);
+			Vue.nextTick(function () {
+				DUOSHUO.EmbedThread(el);
+			});
 			// DISQUS.reset({
 			//   reload: true,
 			//   config: function () {  

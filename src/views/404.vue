@@ -1,6 +1,5 @@
-
 <template>
-	
+		
 </template>
 
 <script>
