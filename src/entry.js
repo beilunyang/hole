@@ -41,16 +41,13 @@ Vue.directive('f-time',function(value){
 	}
 });
 
-//disqus被墙，无奈只能用多说了/(ㄒoㄒ)/~~
+//disqus被墙,换萌评论了
 Vue.directive('show-comment',{
 	update:function(newValue,oldValue){
 		if(newValue.id){
-			var el = this.el; //直接操作DOM
-			el.setAttribute('data-thread-key', newValue.id);
-			el.setAttribute('data-url', location.href);
-			Vue.nextTick(function () {
-				DUOSHUO.EmbedThread(el);
-			});
+			var el = this.el;
+			el.setAttribute('data-key', newValue.id);
+			萌评.运转();
 			// DISQUS.reset({
 			//   reload: true,
 			//   config: function () {  

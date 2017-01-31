@@ -1,4 +1,10 @@
 .comment{
 	@extend article;
+	padding: .4em;
+	textarea, button, input {
+		&:focus {
+			outline: none;
+		}
+	}
 }
 

@@ -11,6 +11,7 @@
 		<link rel="shortcut icon" href="{{asset '/favicon.ico'}}" type="image/x-icon">
 		<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{{asset 'b.css'}}">
+		<link rel="stylesheet" href="//comment.moe/dest/static/css/plus.css">
 		{{ghost_head}}
 	</head>
 	<body>
@@ -48,7 +49,7 @@
 				</div>
 				<div class="row">
 					<ul class="follow-me col-sm-6">
-						<li><a href="https://weibo.com/rijufansjun" target="_blank"><i class="fa fa-weibo"></i></a></li>
+						<li><a href="https://weibo.com/2198405850" target="_blank"><i class="fa fa-weibo"></i></a></li>
 						<li><a href="https://github.com/beilunyang" target="_blank"><i class="fa fa-github"></i></a></li>
 						<li><a href="/rss"><i class="fa fa-rss" target="_blank"></i></a></li>
 					</ul>
@@ -58,11 +59,8 @@
 		</div>
 		<script>
 			var pages = {{pagination.pages}};
-			// duoshuo
-			var duoshuoQuery = {short_name:'btniang'};
-			
 		</script>
-		<script type="text/javascript" src="//static.duoshuo.com/embed.js"></script>
+		<script src="//comment.moe/dest/static/js/build.js" charset="UTF-8"></script>
 		<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 		<script type="text/javascript" src="{{asset 'b.js'}}"></script>
 	</body>
