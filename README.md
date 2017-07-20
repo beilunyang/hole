@@ -1,5 +1,5 @@
 # hole
-一个使用Vue开发的Ghost博客主题  
+另一个使用Vue开发的Ghost博客主题    
 [demo](https://bitibiti.com)  
 ### 使用方法
 * 将hole放入ghost themes文件夹中
